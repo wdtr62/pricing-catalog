@@ -301,7 +301,7 @@
         "images/IMG_20260405_153435869.jpg",
         "images/IMG_20260405_153426182.jpg"
       ],
-      "label": "decorative flower pattern vase x 2",
+      "label": "decorative flower pattern vase x 2, price per piece.",
       "price": 10,
       "sold": false,
       "availabilityNote": "decorative flower pattern vase x 2, price per piece"
@@ -334,7 +334,7 @@
       "label": "Angel Statue x 2",
       "price": 20,
       "sold": false,
-      "availabilityNote": "Angel Statue x 2"
+      "availabilityNote": "Angel Statue x 2, price per piece."
     },
     {
       "id": "wmlev8cphmno0gr4k",
