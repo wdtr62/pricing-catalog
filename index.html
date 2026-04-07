@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Curated gallery — collections and individual works." />
+    <title>Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="is-locked">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="site-header__text">
+          <h1 class="site-title">Collection</h1>
+          <p class="site-tagline">Browse by piece or by set. Prices update when pieces in a set are sold.</p>
+        </div>
+        <div class="site-header__actions">
+          <button
+            type="button"
+            class="btn btn--secondary viewer-hover"
+            id="btnUnlock"
+            title="Are you the owner? Click here, then enter the password to add or change products and prices."
+          >
+            Unlock pricing
+          </button>
+          <button type="button" class="btn btn--ghost" id="btnLock" hidden title="Finish editing and show the catalog to visitors.">
+            Lock
+          </button>
+          <button
+            type="button"
+            class="btn btn--ghost editor-only"
+            id="btnInstructions"
+            aria-haspopup="dialog"
+            aria-controls="instructionsModal"
+          >
+            Instructions
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="toolbar editor-only">
+        <div class="toolbar__buttons">
+          <button type="button" class="btn btn--primary" id="addStandalone">
+            <span class="btn__icon" aria-hidden="true">+</span>
+            Add single product
+          </button>
+          <button type="button" class="btn btn--primary" id="addCategory">
+            <span class="btn__icon" aria-hidden="true">+</span>
+            Add category
+          </button>
+          <button
+            type="button"
+            class="btn btn--secondary"
+            id="btnCopyCatalogJson"
+            title="Copy all catalog data as JSON — paste into catalog.json in your code editor"
+          >
+            Copy JSON
+          </button>
+          <button
+            type="button"
+            class="btn btn--ghost"
+            id="btnDownloadCatalogJson"
+            title="Download a .json backup file (optional)"
+          >
+            Download JSON
+          </button>
+          <button
+            type="button"
+            class="btn btn--secondary"
+            id="btnImportCatalog"
+            title="Paste JSON to load a catalog (e.g. from catalog.json)"
+          >
+            Import JSON…
+          </button>
+          <span id="catalogClipboardFeedback" class="toolbar__feedback" hidden aria-live="polite"></span>
+        </div>
+        <p class="toolbar__hint">
+          Editing is <strong>saved automatically</strong> in this browser — you do not need to copy or import every time you change a price or photo.
+          Use <strong>Copy JSON</strong> when you want to update <code>catalog.json</code> in your project folder for GitHub, or to move your list to another device. A website cannot write files into your folder by itself; you paste the JSON in your editor.
+          Put photos in the <code>images</code> folder; paths like <code>images/photo.jpg</code> work on any server.
+        </p>
+      </div>
+
+      <section class="block standalone-block" id="standaloneSection" hidden>
+        <div class="block__head">
+          <div class="block__head-text">
+            <h2 class="block__title">Single products</h2>
+            <p class="block__subtitle viewer-only">Not part of a set — priced individually.</p>
+          </div>
+          <button
+            type="button"
+            class="btn btn--ghost block__collapse-btn viewer-hover"
+            id="standaloneCollapseToggle"
+            aria-expanded="true"
+            aria-controls="standaloneDetails"
+            title="Switch between a compact photo grid and full cards with prices and notes."
+          >
+            Thumbnails
+          </button>
+        </div>
+        <div id="standaloneThumbStrip" class="thumb-strip thumb-strip--rich" hidden aria-label="Single products, compact view"></div>
+        <div id="standaloneDetails" class="standalone-details">
+          <div id="standaloneGrid" class="category__grid"></div>
+          <div class="block__footer editor-only">
+            <button type="button" class="btn btn--secondary" id="btnAddStandaloneFooter">
+              <span class="btn__icon" aria-hidden="true">+</span>
+              Add single product
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div id="categoriesRoot" class="categories"></div>
+
+      <p id="emptyState" class="empty-state" hidden>Nothing listed yet. Unlock pricing to add products or categories.</p>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Catalog data stays in this browser. Set your password in <code>app.js</code> before publishing — client-side passwords
+        only hide the editor from casual visitors, not determined attackers.
+      </p>
+    </footer>
+
+    <div id="previewModal" class="modal modal--preview" hidden>
+      <div class="modal__backdrop" data-close-preview></div>
+      <div class="modal__panel modal__panel--preview" role="dialog" aria-modal="true" aria-labelledby="previewModalHeading">
+          <button
+            type="button"
+            class="modal__close-x viewer-hover"
+            data-close-preview
+            aria-label="Close preview"
+            title="Close and go back to the catalog."
+          >
+            ×
+          </button>
+        <div class="preview__layout">
+          <div class="preview__image-wrap preview__image-wrap--carousel">
+            <button
+              type="button"
+              class="preview__car-btn preview__car-btn--prev viewer-hover"
+              id="previewModalPrev"
+              aria-label="Previous image"
+              hidden
+              title="Previous photo (or press the Left arrow key)"
+            >
+              ‹
+            </button>
+            <div class="preview__car-viewport">
+              <img id="previewModalImg" class="preview__img" alt="" hidden />
+              <p id="previewModalNoImg" class="preview__no-img" hidden>No image</p>
+            </div>
+            <button
+              type="button"
+              class="preview__car-btn preview__car-btn--next viewer-hover"
+              id="previewModalNext"
+              aria-label="Next image"
+              hidden
+              title="Next photo (or press the Right arrow key)"
+            >
+              ›
+            </button>
+            <span id="previewModalImgCount" class="preview__img-count" hidden aria-live="polite"></span>
+          </div>
+          <div class="preview__meta">
+            <h3 id="previewModalHeading" class="preview__title"></h3>
+            <p class="preview__price-row">
+              <span class="preview__label">Price</span>
+              <span id="previewModalPrice" class="preview__price"></span>
+            </p>
+            <p id="previewModalSold" class="preview__sold-banner" hidden>Sold</p>
+            <div id="previewModalAvailability" class="preview__availability"></div>
+            <p id="previewModalSet" class="preview__set-line" hidden></p>
+          </div>
+        </div>
+        <div class="modal__actions preview__actions">
+          <button type="button" class="btn btn--primary viewer-hover" data-close-preview title="Close this window and return to the catalog.">
+            Close
+          </button>
+          <button type="button" class="btn btn--secondary editor-only" id="previewModalGoEdit">Edit listing</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="instructionsModal" class="modal modal--instructions" hidden>
+      <div class="modal__backdrop" data-close-instructions></div>
+      <div class="modal__panel modal__panel--instructions" role="dialog" aria-modal="true" aria-labelledby="instructionsModalTitle">
+        <button type="button" class="modal__close-x" data-close-instructions aria-label="Close instructions">×</button>
+        <h2 id="instructionsModalTitle" class="modal__title instructions-sheet__title">How to use this catalog</h2>
+        <p class="instructions-sheet__intro">
+          Read this like a simple guidebook. You do <strong>not</strong> need to press “Save”—the site remembers your work for you as you go. This sheet is only available <strong>after you unlock</strong>; visitors only see short hints when they hover parts of the page.
+        </p>
+
+        <div class="instructions-sheet">
+          <section class="instructions-sheet__section" aria-labelledby="ins-saving">
+            <h3 id="ins-saving" class="instructions-sheet__heading">Your work is saved automatically</h3>
+            <p class="instructions-sheet__p">
+              Every time you change a price, a title, or a picture, the page stores it right away inside your web browser on <strong>this computer</strong>. Closing the tab or the browser does <strong>not</strong> erase your catalog, as long as you use the same browser and do not clear site data.
+            </p>
+            <p class="instructions-sheet__p">
+              There is <strong>no cloud backup</strong> built in. Your list does not automatically sync to your phone or another laptop. If you need a backup, ask the person who set up the site about exporting or copying your data.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-two-modes">
+            <h3 id="ins-two-modes" class="instructions-sheet__heading">Two modes: looking and editing</h3>
+            <ul class="instructions-sheet__list">
+              <li>
+                <strong>Locked (visitor mode):</strong> Anyone can scroll, open pictures, and read prices. They cannot change your catalog.
+              </li>
+              <li>
+                <strong>Unlocked (your mode):</strong> After you enter the password, you can add categories, add products, type prices, and attach images.
+              </li>
+            </ul>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-unlock">
+            <h3 id="ins-unlock" class="instructions-sheet__heading">Unlock and lock the editor</h3>
+            <ol class="instructions-sheet__steps">
+              <li>Click <strong>Unlock pricing</strong> at the top.</li>
+              <li>Type the password you were given (it is stored in the site files—change it before sharing the link widely).</li>
+              <li>When you are finished editing, click <strong>Lock</strong> so the catalog is read-only for visitors again.</li>
+            </ol>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-add">
+            <h3 id="ins-add" class="instructions-sheet__heading">Adding products</h3>
+            <p class="instructions-sheet__p">
+              <strong>Single products</strong> live in their own section. Use <strong>Add single product</strong> for one-off items that are not part of a themed group.
+            </p>
+            <p class="instructions-sheet__p">
+              <strong>Categories</strong> are groups (for example “Bowls” or “Winter 2025”). Click <strong>Add category</strong>, then name the group. Inside each category, use <strong>Add image</strong> to add another listing card.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-photos">
+            <h3 id="ins-photos" class="instructions-sheet__heading">Putting photos on each item</h3>
+            <ol class="instructions-sheet__steps">
+              <li>Copy your image files into the <code>images</code> folder that sits next to this website’s files (same idea when you publish to GitHub Pages).</li>
+              <li>On each card, type the path, for example <code>images/my-photo.jpg</code>, or click <strong>Browse…</strong> and pick a file.</li>
+              <li>You can also drag a picture from your computer and drop it onto the big preview area— it fills in the path for you.</li>
+            </ol>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-multi">
+            <h3 id="ins-multi" class="instructions-sheet__heading">More than one photo for the same item</h3>
+            <p class="instructions-sheet__p">
+              Click <strong>Add another view</strong> to add extra rows. Each row is one photo. Use the <strong>‹</strong> and <strong>›</strong> arrows on the card to flip through views. In the big preview window, use the same arrows or the left and right arrow keys on your keyboard.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-prices">
+            <h3 id="ins-prices" class="instructions-sheet__heading">Prices, sets, and “sold”</h3>
+            <ul class="instructions-sheet__list">
+              <li>
+                <strong>Price (each):</strong> What one piece costs when sold by itself.
+              </li>
+              <li>
+                <strong>Offer this category as a set:</strong> Optional bundle price for the whole group. When you mark a piece as <strong>Sold</strong>, its individual price is subtracted from the bundle total so “remaining set price” stays fair.
+              </li>
+              <li>
+                <strong>Not sold individually:</strong> For pieces that only go with the set—check this so buyers know.
+              </li>
+              <li>
+                <strong>Sold:</strong> Check when an item is no longer available; the site can hide or flag it and update set math.
+              </li>
+            </ul>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-compact">
+            <h3 id="ins-compact" class="instructions-sheet__heading">Thumbnails and details</h3>
+            <p class="instructions-sheet__p">
+              <strong>Thumbnails</strong> shrinks a section into small picture tiles so you can scan quickly. <strong>Details &amp; prices</strong> expands it again so you can read and edit full cards. This works for whole categories and for single products.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-care">
+            <h3 id="ins-care" class="instructions-sheet__heading">Keep your data safe</h3>
+            <ul class="instructions-sheet__list instructions-sheet__list--caution">
+              <li>Do not rely on private or incognito windows for long-term storage—they may forget everything when closed.</li>
+              <li>Clearing “cookies and site data” for this site will remove your catalog from this browser.</li>
+              <li>Use the same browser on the same computer to see the list you built.</li>
+            </ul>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-deploy">
+            <h3 id="ins-deploy" class="instructions-sheet__heading">Back up and move to your website (GitHub Pages or any host)</h3>
+            <p class="instructions-sheet__p">
+              Your catalog (titles, prices, image <em>paths</em>, categories) is saved automatically in this browser as you work. Use <strong>Copy JSON</strong> when you want the same data in a <code>catalog.json</code> file in your project. The actual picture <em>files</em> live in your <code>images</code> folder on disk.
+            </p>
+            <ol class="instructions-sheet__steps">
+              <li>
+                While editing, your list is <strong>saved automatically</strong> in the browser. You only need <strong>Copy JSON</strong> / <strong>Import JSON</strong> when moving to another computer, backing up, or putting data into the <code>catalog.json</code> file in your project.
+              </li>
+              <li>
+                Click <strong>Copy JSON</strong>, then in your code editor create or open <code>catalog.json</code> next to <code>index.html</code>, paste, and save. Commit and deploy — a public site cannot write into your project folder by itself.
+              </li>
+              <li>
+                Include the <code>images</code> folder in the repo with the same file names your paths use.
+              </li>
+              <li>
+                On the <strong>live</strong> site, unlock, <strong>Import JSON…</strong>, paste the same JSON (or open <code>catalog.json</code> in an editor, copy all, paste). The page reloads; editing works the same.
+              </li>
+              <li>
+                If <code>catalog.json</code> is on the server, first-time visitors (empty browser data) can load it automatically. After that, each visitor’s browser keeps its own copy until they import again or you publish updates.
+              </li>
+            </ol>
+          </section>
+        </div>
+
+        <div class="modal__actions instructions-sheet__footer">
+          <button type="button" class="btn btn--primary" data-close-instructions>Done</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="importCatalogModal" class="modal" hidden>
+      <div class="modal__backdrop" data-close-import-catalog></div>
+      <div class="modal__panel modal__panel--import" role="dialog" aria-modal="true" aria-labelledby="importCatalogTitle">
+        <h2 id="importCatalogTitle" class="modal__title">Import catalog</h2>
+        <p class="modal__text">
+          Paste the full JSON below (from <strong>Copy JSON</strong> on this site, or from your <code>catalog.json</code> file opened in a text editor). This replaces the catalog stored in
+          <strong>this browser only</strong>.
+        </p>
+        <label class="field">
+          <span class="field__label">Catalog JSON</span>
+          <textarea id="importCatalogTextarea" class="modal__textarea import-catalog__textarea" rows="14" spellcheck="false" placeholder='{ "categories": [...], "standalone": [...], "ui": {...} }'></textarea>
+        </label>
+        <p id="importCatalogError" class="modal__error" hidden></p>
+        <div class="modal__actions">
+          <button type="button" class="btn btn--ghost" data-close-import-catalog>Cancel</button>
+          <button type="button" class="btn btn--primary" id="btnImportCatalogApply">Import</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="authModal" class="modal" hidden>
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+        <h2 id="authModalTitle" class="modal__title">Pricing access</h2>
+        <p class="modal__text">Enter the catalog password to edit prices, images, and categories.</p>
+        <label class="field">
+          <span class="field__label">Password</span>
+          <input type="password" id="authPassword" class="modal__input" autocomplete="current-password" />
+        </label>
+        <p id="authError" class="modal__error" hidden>That password did not match.</p>
+        <div class="modal__actions">
+          <button type="button" class="btn btn--ghost" data-close-modal>Cancel</button>
+          <button type="button" class="btn btn--primary" id="authSubmit">Unlock</button>
+        </div>
+      </div>
+    </div>
+
+    <template id="tplCategory">
+      <section class="category" data-category-id="">
+        <header class="category__header">
+          <input
+            type="text"
+            class="category__title-input"
+            placeholder="Category name"
+            aria-label="Category name"
+          />
+          <span class="category__badge" hidden>Set + singles</span>
+          <button
+            type="button"
+            class="btn btn--ghost category__collapse-btn viewer-hover"
+            data-action="toggle-category-collapse"
+            aria-expanded="true"
+            aria-label="Switch to thumbnail view"
+            title="Switch between a compact photo grid and full cards with prices and notes."
+          >
+            Thumbnails
+          </button>
+          <div class="category__actions editor-only">
+            <button type="button" class="btn btn--ghost btn--icon" data-action="remove-category" aria-label="Remove category">
+              −
+            </button>
+          </div>
+        </header>
+        <div class="category__compact" hidden>
+          <div class="category__compact-inner">
+            <div class="category__compact-main">
+              <div class="category__thumb-strip thumb-strip thumb-strip--rich" aria-label="Category items, compact view"></div>
+            </div>
+            <aside class="category__compact-aside" aria-label="Set bundle pricing">
+              <p class="category__compact-aside-title">Set / bundle</p>
+              <div class="category__compact-set" data-compact-set></div>
+            </aside>
+          </div>
+        </div>
+        <div class="category__details">
+          <p class="category__meta editor-only">
+            <label class="checkbox-label">
+              <input type="checkbox" class="category__set-offer" />
+              <span>Offer this category as a set (bundle price in addition to individual pieces)</span>
+            </label>
+          </p>
+          <div class="category__set-pricing viewer-only" hidden>
+            <p class="category__set-line">
+              <span class="category__set-label">Set price (if all pieces available):</span>
+              <span class="category__set-display-value" data-set-base></span>
+            </p>
+            <p class="category__set-line category__set-line--emphasis">
+              <span class="category__set-label">Remaining set price:</span>
+              <span class="category__remaining-value" data-set-remaining></span>
+            </p>
+            <p class="category__set-note" data-set-note hidden></p>
+          </div>
+          <div class="category__set-editor editor-only" hidden>
+            <label class="field field--inline">
+              <span class="field__label">Set price (bundle)</span>
+              <span class="field__money">
+                <span class="field__currency" aria-hidden="true">$</span>
+                <input type="number" class="category__set-price-input" min="0" step="0.01" placeholder="0.00" />
+              </span>
+            </label>
+            <p class="field__hint">When a piece is marked sold, its individual price is subtracted from this set total.</p>
+          </div>
+          <div class="category__grid"></div>
+          <div class="category__footer editor-only">
+            <button type="button" class="btn btn--secondary" data-action="add-entry">
+              <span class="btn__icon" aria-hidden="true">+</span>
+              Add image
+            </button>
+          </div>
+        </div>
+      </section>
+    </template>
+
+    <template id="tplEntryImageRow">
+      <div class="entry__image-row-item" data-img-index="">
+        <div class="entry__image-row-fields">
+          <input type="text" class="entry__url-per" placeholder="images/photo.jpg" spellcheck="false" />
+          <label class="btn btn--secondary entry__browse-label">
+            Browse…
+            <input type="file" class="entry__file-per" accept="image/*" aria-label="Choose image file" />
+          </label>
+          <button type="button" class="btn btn--ghost btn--small entry__remove-view" aria-label="Remove this view">−</button>
+        </div>
+      </div>
+    </template>
+
+    <template id="tplEntry">
+      <article class="entry" data-entry-id="">
+        <div class="entry__frame">
+          <div class="entry__carousel" data-car-index="0">
+            <button
+              type="button"
+              class="entry__car-btn entry__car-btn--prev viewer-hover"
+              aria-label="Previous image"
+              hidden
+              title="Previous photo for this item"
+            >
+              ‹
+            </button>
+            <div class="entry__car-viewport">
+              <img class="entry__img" alt="" hidden />
+              <div class="entry__placeholder">No image</div>
+            </div>
+            <button
+              type="button"
+              class="entry__car-btn entry__car-btn--next viewer-hover"
+              aria-label="Next image"
+              hidden
+              title="Next photo for this item"
+            >
+              ›
+            </button>
+            <span class="entry__car-count" aria-live="polite"></span>
+          </div>
+          <div class="entry__drop-hint editor-only" aria-hidden="true">Drop image here</div>
+        </div>
+        <div class="entry__price-strip viewer-only">
+          <span class="entry__price-label">Price</span>
+          <span class="entry__price-value" data-price-display></span>
+        </div>
+        <p class="entry__label-view viewer-only" hidden></p>
+        <p class="entry__flags viewer-only">
+          <span class="entry__flag entry__flag--nosingle" hidden>Not sold individually</span>
+          <span class="entry__flag entry__flag--sold" hidden>Sold</span>
+        </p>
+        <div class="entry__availability-view viewer-only" hidden></div>
+        <div class="entry__body editor-only">
+          <div class="field">
+            <span class="field__label">Images (multiple views)</span>
+            <p class="field__hint field__hint--tight">
+              Add paths or <strong>Browse</strong> per row. Use <strong>‹ ›</strong> on the preview to switch views. Drag a file onto the preview to set the
+              <em>currently shown</em> view. Files go in <code>images/</code> for publishing.
+            </p>
+            <div class="entry__images-rows"></div>
+            <button type="button" class="btn btn--secondary entry__add-view">
+              <span class="btn__icon" aria-hidden="true">+</span>
+              Add another view
+            </button>
+          </div>
+          <label class="field">
+            <span class="field__label">Label</span>
+            <input type="text" class="entry__label" placeholder="Title or SKU" />
+          </label>
+          <label class="field">
+            <span class="field__label">Price (each)</span>
+            <span class="field__money">
+              <span class="field__currency" aria-hidden="true">$</span>
+              <input type="number" class="entry__price" min="0" step="0.01" placeholder="0.00" />
+            </span>
+          </label>
+          <label class="checkbox-label checkbox-label--compact entry__sold-wrap">
+            <input type="checkbox" class="entry__sold" />
+            <span class="entry__sold-hint-category">Mark sold (subtracts this piece’s price from the set total)</span>
+            <span class="entry__sold-hint-standalone" hidden>Mark as sold</span>
+          </label>
+          <label class="checkbox-label checkbox-label--compact entry__individual-wrap">
+            <input type="checkbox" class="entry__individual" checked />
+            <span>Available individually (also controls bundle math for sets)</span>
+          </label>
+          <label class="field">
+            <span class="field__label">Availability note</span>
+            <span class="field__hint field__hint--tight">Shown to visitors — e.g. “Sold only with the set” or “Available on its own.”</span>
+            <textarea class="entry__availability-note" rows="3" placeholder="How this piece can be purchased…"></textarea>
+          </label>
+          <button type="button" class="btn btn--ghost btn--small" data-action="remove-entry" aria-label="Remove this image">
+            − Remove
+          </button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
