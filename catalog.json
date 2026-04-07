@@ -37,7 +37,7 @@
         "images/IMG_20260404_145147610.jpg"
       ],
       "label": "Antique Chair",
-      "price": 75,
+      "price": 50,
       "sold": false,
       "availabilityNote": "Needs Some love"
     },
@@ -249,7 +249,7 @@
         "images/IMG_20260404_144653183.jpg"
       ],
       "label": "Med lift Power Chair",
-      "price": 50,
+      "price": null,
       "sold": false,
       "availabilityNote": "Med lift Power Chair. This chair will stand you straight up."
     },
