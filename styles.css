@@ -128,6 +128,24 @@ code {
   padding-left: 0.15rem;
 }
 
+/* Publish to GitHub modal layout */
+.publish-github__row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.publish-github__row .modal__input {
+  flex: 1;
+  min-width: 0;
+}
+
+.publish-github__slash {
+  color: var(--ink-muted);
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1101,6 +1119,12 @@ body.is-locked .entry__car-viewport {
 
 .modal__panel--import {
   max-width: min(36rem, 96vw);
+}
+
+.import-catalog__actions-top {
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
 }
 
 .modal__error {

@@ -10,6 +10,7 @@
   const STORAGE_KEY = "gallery-catalog-v2";
   const LEGACY_STORAGE_KEY = "gallery-catalog-v1";
   const SESSION_UNLOCK = "gallery-pricing-unlocked";
+  const SESSION_GH_TOKEN = "gallery-github-token";
 
   /** Relative folder for shipped images (same directory as index.html when deployed). */
   const IMAGES_DIR = "images";
@@ -24,14 +25,24 @@
   const btnAddCategory = document.getElementById("addCategory");
   const btnAddStandalone = document.getElementById("addStandalone");
   const btnAddStandaloneFooter = document.getElementById("btnAddStandaloneFooter");
+  const btnPublishGithub = document.getElementById("btnPublishGithub");
   const btnCopyCatalogJson = document.getElementById("btnCopyCatalogJson");
   const btnDownloadCatalogJson = document.getElementById("btnDownloadCatalogJson");
   const btnImportCatalog = document.getElementById("btnImportCatalog");
   const btnImportCatalogApply = document.getElementById("btnImportCatalogApply");
+  const btnImportCatalogBrowse = document.getElementById("btnImportCatalogBrowse");
   const importCatalogModal = document.getElementById("importCatalogModal");
   const importCatalogTextarea = document.getElementById("importCatalogTextarea");
   const importCatalogError = document.getElementById("importCatalogError");
+  const importCatalogFile = document.getElementById("importCatalogFile");
   const catalogClipboardFeedback = document.getElementById("catalogClipboardFeedback");
+  const publishGithubModal = document.getElementById("publishGithubModal");
+  const publishGithubOwner = document.getElementById("publishGithubOwner");
+  const publishGithubRepo = document.getElementById("publishGithubRepo");
+  const publishGithubPath = document.getElementById("publishGithubPath");
+  const publishGithubToken = document.getElementById("publishGithubToken");
+  const btnPublishGithubApply = document.getElementById("btnPublishGithubApply");
+  const publishGithubError = document.getElementById("publishGithubError");
   const standaloneCollapseToggle = document.getElementById("standaloneCollapseToggle");
   const standaloneThumbStrip = document.getElementById("standaloneThumbStrip");
   const standaloneDetails = document.getElementById("standaloneDetails");
@@ -419,6 +430,141 @@
     }
   }
 
+  function importCatalogFromChosenFile(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function () {
+      const text = String(reader.result || "").trim();
+      if (importCatalogTextarea) importCatalogTextarea.value = text;
+      if (importCatalogError) {
+        importCatalogError.hidden = true;
+        importCatalogError.textContent = "";
+      }
+      // Optional: auto-import immediately if it looks like JSON
+      if (text && text[0] === "{") {
+        // leave it for the user to click Import so it’s explicit
+      }
+    };
+    reader.onerror = function () {
+      if (importCatalogError) {
+        importCatalogError.textContent = "Could not read that file.";
+        importCatalogError.hidden = false;
+      }
+    };
+    reader.readAsText(file, "utf-8");
+  }
+
+  function closePublishGithubModal() {
+    if (publishGithubModal) publishGithubModal.hidden = true;
+    if (publishGithubError) {
+      publishGithubError.hidden = true;
+      publishGithubError.textContent = "";
+    }
+    document.body.style.overflow = "";
+  }
+
+  function openPublishGithubModal() {
+    if (!isUnlocked()) return;
+    if (previewModal && !previewModal.hidden) closePreviewModal();
+    if (instructionsModal && !instructionsModal.hidden) closeInstructionsModal();
+    if (importCatalogModal && !importCatalogModal.hidden) closeImportCatalogModal();
+    if (authModal && !authModal.hidden) closeModal();
+    if (publishGithubError) {
+      publishGithubError.hidden = true;
+      publishGithubError.textContent = "";
+    }
+    if (publishGithubToken) {
+      const cached = sessionStorage.getItem(SESSION_GH_TOKEN) || "";
+      if (cached) publishGithubToken.value = cached;
+    }
+    if (publishGithubModal) {
+      publishGithubModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      window.setTimeout(function () {
+        if (publishGithubToken) publishGithubToken.focus();
+      }, 0);
+    }
+  }
+
+  function toBase64Utf8(text) {
+    return btoa(
+      encodeURIComponent(text).replace(/%([0-9A-F]{2})/g, function (_m, p1) {
+        return String.fromCharCode(parseInt(p1, 16));
+      })
+    );
+  }
+
+  function githubApiJson(url, opts) {
+    return fetch(url, opts).then(function (r) {
+      return r
+        .text()
+        .then(function (t) {
+          var data = null;
+          try {
+            data = t ? JSON.parse(t) : null;
+          } catch (e) {
+            data = null;
+          }
+          return { ok: r.ok, status: r.status, data: data, text: t };
+        })
+        .catch(function () {
+          return { ok: r.ok, status: r.status, data: null, text: "" };
+        });
+    });
+  }
+
+  function publishCatalogToGithub(owner, repo, path, token) {
+    if (!catalogState || !isUnlocked()) return Promise.resolve({ ok: false, msg: "Locked" });
+    owner = String(owner || "").trim();
+    repo = String(repo || "").trim();
+    path = String(path || "").trim() || "catalog.json";
+    token = String(token || "").trim();
+    if (!owner || !repo || !token) return Promise.resolve({ ok: false, msg: "Missing fields" });
+
+    sessionStorage.setItem(SESSION_GH_TOKEN, token);
+
+    var apiBase =
+      "https://api.github.com/repos/" +
+      encodeURIComponent(owner) +
+      "/" +
+      encodeURIComponent(repo) +
+      "/contents/";
+    var url = apiBase + path.replace(/^\/+/, "");
+    var headers = {
+      Accept: "application/vnd.github+json",
+      Authorization: "Bearer " + token,
+    };
+
+    return githubApiJson(url, { method: "GET", headers: headers }).then(function (res) {
+      var sha = null;
+      if (res.ok && res.data && res.data.sha) sha = res.data.sha;
+      if (!res.ok && res.status !== 404) {
+        return { ok: false, msg: "GitHub error (GET): " + res.status };
+      }
+
+      var json = JSON.stringify(catalogState, null, 2);
+      var body = {
+        message: "Update catalog data",
+        content: toBase64Utf8(json),
+      };
+      if (sha) body.sha = sha;
+
+      return githubApiJson(url, {
+        method: "PUT",
+        headers: Object.assign({ "Content-Type": "application/json" }, headers),
+        body: JSON.stringify(body),
+      }).then(function (res2) {
+        if (res2.ok) return { ok: true, msg: "Published" };
+        var detail = "";
+        if (res2.data && res2.data.message) detail = res2.data.message;
+        return {
+          ok: false,
+          msg: "GitHub error (PUT): " + res2.status + (detail ? " — " + detail : ""),
+        };
+      });
+    });
+  }
+
   function saveState(state) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }
@@ -459,6 +605,9 @@
     }
     if (!unlocked && importCatalogModal && !importCatalogModal.hidden) {
       closeImportCatalogModal();
+    }
+    if (!unlocked && publishGithubModal && !publishGithubModal.hidden) {
+      closePublishGithubModal();
     }
 
     root.querySelectorAll(".category__title-input").forEach(function (inp) {
@@ -1566,6 +1715,18 @@
         el.addEventListener("click", closeImportCatalogModal);
       });
     }
+    if (btnImportCatalogBrowse && importCatalogFile) {
+      btnImportCatalogBrowse.addEventListener("click", function () {
+        if (!isUnlocked()) return;
+        importCatalogFile.click();
+      });
+      importCatalogFile.addEventListener("change", function () {
+        const f = importCatalogFile.files && importCatalogFile.files[0];
+        importCatalogFile.value = "";
+        if (!f) return;
+        importCatalogFromChosenFile(f);
+      });
+    }
     if (btnImportCatalogApply && importCatalogTextarea) {
       btnImportCatalogApply.addEventListener("click", function () {
         const raw = importCatalogTextarea.value.trim();
@@ -1594,6 +1755,45 @@
           }
           closeImportCatalogModal();
           window.location.reload();
+        });
+      });
+    }
+
+    if (btnPublishGithub) {
+      btnPublishGithub.addEventListener("click", function () {
+        openPublishGithubModal();
+      });
+    }
+    if (publishGithubModal) {
+      publishGithubModal.querySelectorAll("[data-close-publish-github]").forEach(function (el) {
+        el.addEventListener("click", closePublishGithubModal);
+      });
+    }
+    if (btnPublishGithubApply) {
+      btnPublishGithubApply.addEventListener("click", function () {
+        if (!isUnlocked()) return;
+        const owner = publishGithubOwner ? publishGithubOwner.value : "";
+        const repo = publishGithubRepo ? publishGithubRepo.value : "";
+        const path = publishGithubPath ? publishGithubPath.value : "catalog.json";
+        const token = publishGithubToken ? publishGithubToken.value : "";
+        if (publishGithubError) {
+          publishGithubError.hidden = true;
+          publishGithubError.textContent = "";
+        }
+        btnPublishGithubApply.disabled = true;
+        btnPublishGithubApply.textContent = "Publishing…";
+        publishCatalogToGithub(owner, repo, path, token).then(function (res) {
+          btnPublishGithubApply.disabled = false;
+          btnPublishGithubApply.textContent = "Publish now";
+          if (res && res.ok) {
+            closePublishGithubModal();
+            window.alert("Published to GitHub. Your live site may take a minute to update.");
+          } else {
+            if (publishGithubError) {
+              publishGithubError.textContent = (res && res.msg) || "Could not publish.";
+              publishGithubError.hidden = false;
+            }
+          }
         });
       });
     }
@@ -1632,6 +1832,10 @@
         }
         if (importCatalogModal && !importCatalogModal.hidden) {
           closeImportCatalogModal();
+          return;
+        }
+        if (publishGithubModal && !publishGithubModal.hidden) {
+          closePublishGithubModal();
           return;
         }
         if (!authModal.hidden) closeModal();

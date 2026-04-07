@@ -58,6 +58,14 @@
           </button>
           <button
             type="button"
+            class="btn btn--primary"
+            id="btnPublishGithub"
+            title="Save (publish) the current catalog to GitHub so it shows on the live site"
+          >
+            Publish to GitHub
+          </button>
+          <button
+            type="button"
             class="btn btn--secondary"
             id="btnCopyCatalogJson"
             title="Copy all catalog data as JSON — paste into catalog.json in your code editor"
@@ -322,6 +330,41 @@
       </div>
     </div>
 
+    <div id="publishGithubModal" class="modal" hidden>
+      <div class="modal__backdrop" data-close-publish-github></div>
+      <div class="modal__panel modal__panel--import" role="dialog" aria-modal="true" aria-labelledby="publishGithubTitle">
+        <h2 id="publishGithubTitle" class="modal__title">Publish to GitHub</h2>
+        <p class="modal__text">
+          This writes your catalog into <code>catalog.json</code> in your GitHub repo so the live site can load it. You’ll paste a GitHub token below.
+          This token is powerful — only use it on your own computer.
+        </p>
+        <div class="field">
+          <span class="field__label">GitHub repo</span>
+          <div class="publish-github__row">
+            <input id="publishGithubOwner" class="modal__input" type="text" value="wdtr62" autocomplete="off" spellcheck="false" />
+            <span class="publish-github__slash" aria-hidden="true">/</span>
+            <input id="publishGithubRepo" class="modal__input" type="text" value="pricing-catalog" autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
+        <label class="field">
+          <span class="field__label">File path in repo</span>
+          <input id="publishGithubPath" class="modal__input" type="text" value="catalog.json" autocomplete="off" spellcheck="false" />
+        </label>
+        <label class="field">
+          <span class="field__label">GitHub token</span>
+          <input id="publishGithubToken" class="modal__input" type="password" placeholder="ghp_… or github_pat_…" autocomplete="off" />
+        </label>
+        <p class="field__hint">
+          Create a fine‑grained token with <strong>Contents: Read and write</strong> access to this repo. Keep it private.
+        </p>
+        <p id="publishGithubError" class="modal__error" hidden></p>
+        <div class="modal__actions">
+          <button type="button" class="btn btn--ghost" data-close-publish-github>Cancel</button>
+          <button type="button" class="btn btn--primary" id="btnPublishGithubApply">Publish now</button>
+        </div>
+      </div>
+    </div>
+
     <div id="importCatalogModal" class="modal" hidden>
       <div class="modal__backdrop" data-close-import-catalog></div>
       <div class="modal__panel modal__panel--import" role="dialog" aria-modal="true" aria-labelledby="importCatalogTitle">
@@ -330,6 +373,12 @@
           Paste the full JSON below (from <strong>Copy JSON</strong> on this site, or from your <code>catalog.json</code> file opened in a text editor). This replaces the catalog stored in
           <strong>this browser only</strong>.
         </p>
+        <div class="modal__actions import-catalog__actions-top">
+          <button type="button" class="btn btn--secondary" id="btnImportCatalogBrowse" title="Choose a JSON file from your computer">
+            Browse file…
+          </button>
+          <input type="file" id="importCatalogFile" accept=".json,application/json" hidden aria-hidden="true" />
+        </div>
         <label class="field">
           <span class="field__label">Catalog JSON</span>
           <textarea id="importCatalogTextarea" class="modal__textarea import-catalog__textarea" rows="14" spellcheck="false" placeholder='{ "categories": [...], "standalone": [...], "ui": {...} }'></textarea>
