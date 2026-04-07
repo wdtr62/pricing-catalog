@@ -7,10 +7,18 @@
    */
   const ADMIN_PASSWORD = "bruce";
 
+  /**
+   * Optional GitHub token for “Publish to GitHub”. Leave empty — do not paste a real token here
+   * if you push to GitHub: their push protection will block the commit. Use “Remember token on
+   * this device” in the Publish dialog after pasting once, or paste the token each time.
+   */
+  const GITHUB_PUBLISH_TOKEN = "";
+
   const STORAGE_KEY = "gallery-catalog-v2";
   const LEGACY_STORAGE_KEY = "gallery-catalog-v1";
   const SESSION_UNLOCK = "gallery-pricing-unlocked";
   const SESSION_GH_TOKEN = "gallery-github-token";
+  const LOCAL_GH_TOKEN = "gallery-github-token-local";
 
   /** Relative folder for shipped images (same directory as index.html when deployed). */
   const IMAGES_DIR = "images";
@@ -40,7 +48,9 @@
   const publishGithubRepo = document.getElementById("publishGithubRepo");
   const publishGithubPath = document.getElementById("publishGithubPath");
   const publishGithubToken = document.getElementById("publishGithubToken");
+  const publishGithubRemember = document.getElementById("publishGithubRemember");
   const btnPublishGithubApply = document.getElementById("btnPublishGithubApply");
+  const btnClearGithubToken = document.getElementById("btnClearGithubToken");
   const publishGithubError = document.getElementById("publishGithubError");
   const standaloneCollapseToggle = document.getElementById("standaloneCollapseToggle");
   const standaloneThumbStrip = document.getElementById("standaloneThumbStrip");
@@ -462,6 +472,26 @@
     document.body.style.overflow = "";
   }
 
+  /** Token order: typed field → this session → saved on device → optional constant in app.js */
+  function resolveGithubTokenForPublish() {
+    const fromInput = publishGithubToken ? publishGithubToken.value.trim() : "";
+    if (fromInput) return fromInput;
+    return (
+      sessionStorage.getItem(SESSION_GH_TOKEN) ||
+      localStorage.getItem(LOCAL_GH_TOKEN) ||
+      String(GITHUB_PUBLISH_TOKEN || "").trim() ||
+      ""
+    );
+  }
+
+  function clearStoredGithubTokens() {
+    localStorage.removeItem(LOCAL_GH_TOKEN);
+    sessionStorage.removeItem(SESSION_GH_TOKEN);
+    if (publishGithubToken) {
+      publishGithubToken.value = String(GITHUB_PUBLISH_TOKEN || "").trim();
+    }
+  }
+
   function openPublishGithubModal() {
     if (!isUnlocked()) return;
     if (previewModal && !previewModal.hidden) closePreviewModal();
@@ -473,14 +503,23 @@
       publishGithubError.textContent = "";
     }
     if (publishGithubToken) {
-      const cached = sessionStorage.getItem(SESSION_GH_TOKEN) || "";
-      if (cached) publishGithubToken.value = cached;
+      const t =
+        sessionStorage.getItem(SESSION_GH_TOKEN) ||
+        localStorage.getItem(LOCAL_GH_TOKEN) ||
+        String(GITHUB_PUBLISH_TOKEN || "").trim() ||
+        "";
+      publishGithubToken.value = t;
     }
     if (publishGithubModal) {
       publishGithubModal.hidden = false;
       document.body.style.overflow = "hidden";
       window.setTimeout(function () {
-        if (publishGithubToken) publishGithubToken.focus();
+        const hasToken = !!resolveGithubTokenForPublish();
+        if (hasToken && btnPublishGithubApply) {
+          btnPublishGithubApply.focus();
+        } else if (publishGithubToken) {
+          publishGithubToken.focus();
+        }
       }, 0);
     }
   }
@@ -1771,10 +1810,26 @@
         const owner = publishGithubOwner ? publishGithubOwner.value : "";
         const repo = publishGithubRepo ? publishGithubRepo.value : "";
         const path = publishGithubPath ? publishGithubPath.value : "catalog.json";
-        const token = publishGithubToken ? publishGithubToken.value : "";
+        const token = resolveGithubTokenForPublish();
         if (publishGithubError) {
           publishGithubError.hidden = true;
           publishGithubError.textContent = "";
+        }
+        if (!token) {
+          if (publishGithubError) {
+            publishGithubError.textContent = "Paste a GitHub token, or set GITHUB_PUBLISH_TOKEN in app.js, or use Remember after a successful publish.";
+            publishGithubError.hidden = false;
+          }
+          return;
+        }
+        if (
+          !window.confirm(
+            "Update the website for everyone?\n\n" +
+              "This only saves your catalog (prices and names) to the site. It does not charge money or take payment.\n\n" +
+              "Click OK to continue."
+          )
+        ) {
+          return;
         }
         btnPublishGithubApply.disabled = true;
         btnPublishGithubApply.textContent = "Publishing…";
@@ -1782,8 +1837,11 @@
           btnPublishGithubApply.disabled = false;
           btnPublishGithubApply.textContent = "Publish now";
           if (res && res.ok) {
+            if (publishGithubRemember && publishGithubRemember.checked) {
+              localStorage.setItem(LOCAL_GH_TOKEN, token);
+            }
             closePublishGithubModal();
-            window.alert("Published to GitHub. Your live site may take a minute to update.");
+            window.alert("Done. Give it a minute, then refresh the page if you do not see the update yet.");
           } else {
             if (publishGithubError) {
               publishGithubError.textContent = (res && res.msg) || "Could not publish.";
@@ -1791,6 +1849,15 @@
             }
           }
         });
+      });
+    }
+    if (btnClearGithubToken) {
+      btnClearGithubToken.addEventListener("click", function () {
+        clearStoredGithubTokens();
+        if (publishGithubError) {
+          publishGithubError.hidden = true;
+          publishGithubError.textContent = "";
+        }
       });
     }
 

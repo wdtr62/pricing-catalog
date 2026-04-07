@@ -158,6 +158,12 @@ code {
   flex: 0 0 auto;
 }
 
+.publish-github__remember {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
