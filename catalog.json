@@ -37,7 +37,7 @@
         "images/IMG_20260404_145147610.jpg"
       ],
       "label": "Antique Chair",
-      "price": 50,
+      "price": 75,
       "sold": false,
       "availabilityNote": "Needs Some love"
     },
@@ -666,6 +666,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
