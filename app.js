@@ -12,7 +12,7 @@
    * if you push to GitHub: their push protection will block the commit. Use “Remember token on
    * this device” in the Publish dialog after pasting once, or paste the token each time.
    */
-  const GITHUB_PUBLISH_TOKEN = "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";
+  const GITHUB_PUBLISH_TOKEN = "";
 
   const STORAGE_KEY = "gallery-catalog-v2";
   const LEGACY_STORAGE_KEY = "gallery-catalog-v1";
