@@ -5,7 +5,7 @@
       "label": "End-t1  x 2",
       "price": 75,
       "sold": false,
-      "availabilityNote": "This is a Pair of tables.",
+      "availabilityNote": "This is a pair of tables. price per piece",
       "images": [
         "images/IMG_20260404_144731543.jpg",
         "images/IMG_20260404_144800233.jpg"
@@ -127,9 +127,9 @@
         "images/IMG_20260404_152937940_HDR.jpg"
       ],
       "label": "Set of gold-colored wine glasses 6 pieces",
-      "price": 10,
+      "price": 5,
       "sold": false,
-      "availabilityNote": "Set of gold-colored wine glasses 6 pieces"
+      "availabilityNote": "Set of gold-colored wine glasses 6 pieces, price per piece"
     },
     {
       "id": "68nzvv466mnmpywfa",
@@ -207,10 +207,10 @@
       "images": [
         "images/IMG_20260405_153207107.jpg"
       ],
-      "label": "????",
+      "label": "home decorations",
       "price": 5,
       "sold": false,
-      "availabilityNote": "????"
+      "availabilityNote": "home decorations, price per piece"
     },
     {
       "id": "tpe5vl8j9mnnuodl9",
@@ -304,7 +304,7 @@
       "label": "decorative flower pattern vase x 2",
       "price": 10,
       "sold": false,
-      "availabilityNote": "decorative flower pattern vase x 2"
+      "availabilityNote": "decorative flower pattern vase x 2, price per piece"
     },
     {
       "id": "rbvp37wp7mnnz1ozu",
@@ -314,7 +314,7 @@
       "label": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2",
       "price": 10,
       "sold": false,
-      "availabilityNote": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2"
+      "availabilityNote": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2, price per piece"
     },
     {
       "id": "3bdgjpzdzmnnz1qo3",
