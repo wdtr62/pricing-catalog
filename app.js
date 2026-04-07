@@ -30,7 +30,6 @@
   const btnDownloadCatalogJson = document.getElementById("btnDownloadCatalogJson");
   const btnImportCatalog = document.getElementById("btnImportCatalog");
   const btnImportCatalogApply = document.getElementById("btnImportCatalogApply");
-  const btnImportCatalogBrowse = document.getElementById("btnImportCatalogBrowse");
   const importCatalogModal = document.getElementById("importCatalogModal");
   const importCatalogTextarea = document.getElementById("importCatalogTextarea");
   const importCatalogError = document.getElementById("importCatalogError");
@@ -1715,12 +1714,9 @@
         el.addEventListener("click", closeImportCatalogModal);
       });
     }
-    if (btnImportCatalogBrowse && importCatalogFile) {
-      btnImportCatalogBrowse.addEventListener("click", function () {
-        if (!isUnlocked()) return;
-        importCatalogFile.click();
-      });
+    if (importCatalogFile) {
       importCatalogFile.addEventListener("change", function () {
+        if (!isUnlocked()) return;
         const f = importCatalogFile.files && importCatalogFile.files[0];
         importCatalogFile.value = "";
         if (!f) return;

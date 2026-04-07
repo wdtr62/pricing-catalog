@@ -374,10 +374,10 @@
           <strong>this browser only</strong>.
         </p>
         <div class="modal__actions import-catalog__actions-top">
-          <button type="button" class="btn btn--secondary" id="btnImportCatalogBrowse" title="Choose a JSON file from your computer">
+          <label class="btn btn--secondary" title="Choose a JSON file from your computer">
             Browse file…
-          </button>
-          <input type="file" id="importCatalogFile" accept=".json,application/json" hidden aria-hidden="true" />
+            <input type="file" id="importCatalogFile" accept=".json,application/json" class="visually-hidden" />
+          </label>
         </div>
         <label class="field">
           <span class="field__label">Catalog JSON</span>
