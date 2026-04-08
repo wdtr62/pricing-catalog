@@ -282,7 +282,7 @@
       ],
       "label": "decorative flower pattern vase x 2, price per piece.",
       "price": 10,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "decorative flower pattern vase x 2, price per piece"
     },
     {
@@ -292,7 +292,7 @@
       ],
       "label": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2",
       "price": 10,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2, price per piece"
     },
     {
@@ -604,6 +604,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
