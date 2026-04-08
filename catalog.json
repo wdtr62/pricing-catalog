@@ -492,7 +492,7 @@
       "title": "Bedroom Set 3",
       "offerAsSet": true,
       "setPrice": 225,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "jmtsa2w3vmnmnyh4a",
@@ -517,15 +517,15 @@
           "availabilityNote": "Bedroom Set 3"
         },
         {
-          "id": "dyad3i1wgmnmo20rp",
+          "id": "v3fu0ug22mnph3vzt",
           "images": [
-            "images/IMG_20260404_140837458.jpg"
+            "/images/IMG_20260404_145048224.jpg"
           ],
-          "label": "bed side table",
+          "label": "End Table",
           "individual": true,
           "price": 25,
           "sold": false,
-          "availabilityNote": "Bedroom Set 3"
+          "availabilityNote": ""
         }
       ]
     },
