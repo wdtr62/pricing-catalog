@@ -19,8 +19,19 @@
         <div class="site-header__text">
           <h1 class="site-title">Collection</h1>
           <p class="site-tagline">Browse by piece or by set. Prices update when pieces in a set are sold.</p>
+          <p class="site-refresh-note viewer-only">
+            Not seeing the newest updates? Click <strong>Load latest</strong>.
+          </p>
         </div>
         <div class="site-header__actions">
+          <button
+            type="button"
+            class="btn btn--ghost viewer-hover"
+            id="btnLoadLatestFromSite"
+            title="Fetch the latest catalog.json from this website (use if refresh still shows old data)"
+          >
+            Load latest
+          </button>
           <button
             type="button"
             class="btn btn--secondary viewer-hover"
@@ -87,14 +98,6 @@
             title="Paste JSON to load a catalog (e.g. from catalog.json)"
           >
             Import JSON…
-          </button>
-          <button
-            type="button"
-            class="btn btn--ghost"
-            id="btnLoadLatestFromSite"
-            title="Fetch the latest catalog.json from this website (use after someone else published, or to bypass cache)"
-          >
-            Load latest from website
           </button>
           <span id="catalogClipboardFeedback" class="toolbar__feedback" hidden aria-live="polite"></span>
         </div>

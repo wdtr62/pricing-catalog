@@ -351,11 +351,31 @@
         if (!data || typeof data !== "object") throw new Error("bad");
         const normalized = normalizeState(data);
         saveState(normalized);
-        if (typeof onDone === "function") onDone(null);
+        if (typeof onDone === "function") onDone(null, normalized);
       })
       .catch(function (err) {
         if (typeof onDone === "function") onDone(err);
       });
+  }
+
+  function tryAutoSyncLockedCatalog(currentState) {
+    try {
+      if (isUnlocked()) return;
+      if (sessionStorage.getItem("catalogAutoSyncDone") === "1") return;
+      sessionStorage.setItem("catalogAutoSyncDone", "1");
+    } catch {
+      return;
+    }
+
+    loadCatalogJsonFromWebsite(function (err, latest) {
+      if (err || !latest) return;
+      try {
+        if (JSON.stringify(latest) === JSON.stringify(currentState)) return;
+      } catch {
+        // ignore compare errors; worst case user can press the button
+      }
+      window.location.reload();
+    });
   }
 
   function showCatalogCopyFeedback(message) {
@@ -638,6 +658,7 @@
     if (on) sessionStorage.setItem(SESSION_UNLOCK, "1");
     else sessionStorage.removeItem(SESSION_UNLOCK);
     applyLockUI();
+    tryAutoSyncLockedCatalog(state);
   }
 
   function setEntryViewportTooltip(viewport) {
@@ -1773,13 +1794,14 @@
     }
     if (btnLoadLatestFromSite) {
       btnLoadLatestFromSite.addEventListener("click", function () {
-        if (!isUnlocked()) return;
-        if (
-          !window.confirm(
-            "Replace the catalog in this browser with the latest catalog.json from this website? (Use this after someone else published, or if refresh still shows old data.)"
-          )
-        ) {
-          return;
+        if (isUnlocked()) {
+          if (
+            !window.confirm(
+              "Replace the catalog in this browser with the latest catalog.json from this website? (If you have unsaved edits, they will be replaced.)"
+            )
+          ) {
+            return;
+          }
         }
         btnLoadLatestFromSite.disabled = true;
         loadCatalogJsonFromWebsite(function (err) {

@@ -99,6 +99,13 @@ code {
   font-size: 1.05rem;
 }
 
+.site-refresh-note {
+  margin: 0.5rem 0 0;
+  max-width: 36rem;
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+}
+
 .main {
   max-width: 1120px;
   margin: 0 auto;
