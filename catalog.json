@@ -5,7 +5,7 @@
       "label": "End-t1  x 2",
       "price": 75,
       "sold": false,
-      "availabilityNote": "This is a Pair of tables.",
+      "availabilityNote": "This is a pair of tables. price per piece",
       "images": [
         "images/IMG_20260404_144731543.jpg",
         "images/IMG_20260404_144800233.jpg"
@@ -127,9 +127,9 @@
         "images/IMG_20260404_152937940_HDR.jpg"
       ],
       "label": "Set of gold-colored wine glasses 6 pieces",
-      "price": 10,
+      "price": 5,
       "sold": false,
-      "availabilityNote": "Set of gold-colored wine glasses 6 pieces"
+      "availabilityNote": "Set of gold-colored wine glasses 6 pieces, price per piece"
     },
     {
       "id": "68nzvv466mnmpywfa",
@@ -207,10 +207,10 @@
       "images": [
         "images/IMG_20260405_153207107.jpg"
       ],
-      "label": "????",
+      "label": "home decorations",
       "price": 5,
       "sold": false,
-      "availabilityNote": "????"
+      "availabilityNote": "home decorations, price per piece"
     },
     {
       "id": "tpe5vl8j9mnnuodl9",
@@ -222,16 +222,6 @@
       "price": 20,
       "sold": false,
       "availabilityNote": "Tribal Mask Wall Hanging-Hand Carved and Hand Painted-Large 22\" Price Per piece. 4 pieces total"
-    },
-    {
-      "id": "ile7f0972mnnuofey",
-      "images": [
-        "images/IMG_20260404_144636378.jpg"
-      ],
-      "label": "50 inch samsung led tv",
-      "price": 25,
-      "sold": false,
-      "availabilityNote": "50 inch samsung led tv"
     },
     {
       "id": "h77zz79r6mnnuofmy",
@@ -275,17 +265,6 @@
       "availabilityNote": "Scarlet Red Curtains"
     },
     {
-      "id": "z1ksr99hdmnnyisw0",
-      "images": [
-        "images/IMG_20260406_142112262.jpg",
-        "images/IMG_20260406_142129095.jpg"
-      ],
-      "label": "Whirlpool In Can Caddy 21.4-cu ft Side-by-Side Refrigerator ",
-      "price": 250,
-      "sold": false,
-      "availabilityNote": "Whirlpool In Can Caddy 21.4-cu ft Side-by-Side Refrigerator "
-    },
-    {
       "id": "slmsuqleamnnyiuo2",
       "images": [
         "images/IMG_20260406_141855846.jpg"
@@ -301,10 +280,10 @@
         "images/IMG_20260405_153435869.jpg",
         "images/IMG_20260405_153426182.jpg"
       ],
-      "label": "decorative flower pattern vase x 2",
+      "label": "decorative flower pattern vase x 2, price per piece.",
       "price": 10,
       "sold": false,
-      "availabilityNote": "decorative flower pattern vase x 2"
+      "availabilityNote": "decorative flower pattern vase x 2, price per piece"
     },
     {
       "id": "rbvp37wp7mnnz1ozu",
@@ -312,9 +291,9 @@
         "images/IMG_20260405_144440783.jpg"
       ],
       "label": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2",
-      "price": 20,
+      "price": 10,
       "sold": false,
-      "availabilityNote": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2"
+      "availabilityNote": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2, price per piece"
     },
     {
       "id": "3bdgjpzdzmnnz1qo3",
@@ -334,17 +313,7 @@
       "label": "Angel Statue x 2",
       "price": 20,
       "sold": false,
-      "availabilityNote": "Angel Statue x 2"
-    },
-    {
-      "id": "wmlev8cphmno0gr4k",
-      "images": [
-        "images/IMG_20260405_151341146.jpg"
-      ],
-      "label": "Electric Stove",
-      "price": 75,
-      "sold": false,
-      "availabilityNote": "Electric Stove"
+      "availabilityNote": "Angel Statue x 2, price per piece."
     }
   ],
   "categories": [
@@ -517,15 +486,15 @@
           "availabilityNote": "Bedroom Set 3"
         },
         {
-          "id": "dyad3i1wgmnmo20rp",
+          "id": "v3fu0ug22mnph3vzt",
           "images": [
-            "images/IMG_20260404_145048224.jpg"
+            "/images/IMG_20260404_145048224.jpg"
           ],
-          "label": "bed side table",
+          "label": "End Table",
           "individual": true,
           "price": 25,
           "sold": false,
-          "availabilityNote": "Bedroom Set 3"
+          "availabilityNote": ""
         }
       ]
     },
@@ -557,37 +526,6 @@
           "price": 75,
           "sold": false,
           "availabilityNote": "these are like new"
-        }
-      ]
-    },
-    {
-      "id": "l5za5fd8bmnmoptzr",
-      "title": "Wicker Chairs",
-      "offerAsSet": true,
-      "setPrice": 100,
-      "collapsed": true,
-      "entries": [
-        {
-          "id": "231mom1sjmnmopvl1",
-          "images": [
-            "images/IMG_20260404_144951178.jpg"
-          ],
-          "label": "Antique Wicker chair",
-          "individual": true,
-          "price": 50,
-          "sold": false,
-          "availabilityNote": ""
-        },
-        {
-          "id": "5bw2xf84tmnmopzmf",
-          "images": [
-            "images/IMG_20260404_144928622.jpg"
-          ],
-          "label": "Antique Wicker chair",
-          "individual": true,
-          "price": 50,
-          "sold": false,
-          "availabilityNote": ""
         }
       ]
     },
