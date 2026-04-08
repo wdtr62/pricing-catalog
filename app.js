@@ -37,6 +37,7 @@
   const btnCopyCatalogJson = document.getElementById("btnCopyCatalogJson");
   const btnDownloadCatalogJson = document.getElementById("btnDownloadCatalogJson");
   const btnImportCatalog = document.getElementById("btnImportCatalog");
+  const btnLoadLatestFromSite = document.getElementById("btnLoadLatestFromSite");
   const btnImportCatalogApply = document.getElementById("btnImportCatalogApply");
   const importCatalogModal = document.getElementById("importCatalogModal");
   const importCatalogTextarea = document.getElementById("importCatalogTextarea");
@@ -333,6 +334,28 @@
           resolve(emptyCatalogState());
         });
     });
+  }
+
+  /**
+   * Re-fetch catalog.json from the same origin (cache-busted). Use when another device published
+   * or GitHub Pages cached an old file — normal refresh still uses localStorage until this runs.
+   */
+  function loadCatalogJsonFromWebsite(onDone) {
+    const url = "catalog.json?cb=" + Date.now();
+    fetch(url, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      })
+      .then(function (data) {
+        if (!data || typeof data !== "object") throw new Error("bad");
+        const normalized = normalizeState(data);
+        saveState(normalized);
+        if (typeof onDone === "function") onDone(null);
+      })
+      .catch(function (err) {
+        if (typeof onDone === "function") onDone(err);
+      });
   }
 
   function showCatalogCopyFeedback(message) {
@@ -1746,6 +1769,29 @@
     if (btnImportCatalog) {
       btnImportCatalog.addEventListener("click", function () {
         openImportCatalogModal();
+      });
+    }
+    if (btnLoadLatestFromSite) {
+      btnLoadLatestFromSite.addEventListener("click", function () {
+        if (!isUnlocked()) return;
+        if (
+          !window.confirm(
+            "Replace the catalog in this browser with the latest catalog.json from this website? (Use this after someone else published, or if refresh still shows old data.)"
+          )
+        ) {
+          return;
+        }
+        btnLoadLatestFromSite.disabled = true;
+        loadCatalogJsonFromWebsite(function (err) {
+          btnLoadLatestFromSite.disabled = false;
+          if (err) {
+            window.alert(
+              "Could not load catalog.json from this site. If you are opening the page as a file (file://), open the published GitHub Pages URL instead, or use Import JSON with a downloaded catalog.json."
+            );
+            return;
+          }
+          window.location.reload();
+        });
       });
     }
     if (importCatalogModal) {

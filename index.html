@@ -88,12 +88,18 @@
           >
             Import JSON…
           </button>
+          <button
+            type="button"
+            class="btn btn--ghost"
+            id="btnLoadLatestFromSite"
+            title="Fetch the latest catalog.json from this website (use after someone else published, or to bypass cache)"
+          >
+            Load latest from website
+          </button>
           <span id="catalogClipboardFeedback" class="toolbar__feedback" hidden aria-live="polite"></span>
         </div>
         <p class="toolbar__hint">
-          Editing is <strong>saved automatically</strong> in this browser — you do not need to copy or import every time you change a price or photo.
-          Use <strong>Copy JSON</strong> when you want to update <code>catalog.json</code> in your project folder for GitHub, or to move your list to another device. A website cannot write files into your folder by itself; you paste the JSON in your editor.
-          Put photos in the <code>images</code> folder; paths like <code>images/photo.jpg</code> work on any server.
+          Editing is <strong>saved in this browser</strong>. <strong>Publish to GitHub</strong> updates the online file everyone else loads. If you don’t see someone else’s changes, click <strong>Load latest from website</strong>. Put photos in <code>images/</code>; paths like <code>images/photo.jpg</code> work on the live site.
         </p>
       </div>
 
@@ -215,8 +221,16 @@
               <li>Scroll to the item you want. Change the <strong>price</strong> and/or <strong>label</strong> (name). Your changes stay in the page as you type—no Save button needed for that.</li>
               <li>When you are done editing, click <strong>Publish to GitHub</strong>, then <strong>Publish now</strong>.</li>
               <li>A small window may ask you to confirm—click <strong>OK</strong> (see below).</li>
-              <li>Wait about a minute, then refresh the website link so you see the update. Click <strong>Lock</strong> when you want the editor hidden again.</li>
+              <li>After publishing, wait a minute for GitHub to update. Your own screen already has your edits; <strong>other people</strong> get them from the site file. If <strong>you</strong> need to pull the newest file from the site (for example your partner published from another computer), click <strong>Load latest from website</strong>, then refresh if asked.</li>
+              <li>Click <strong>Lock</strong> when you want the editor hidden for visitors.</li>
             </ol>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="ins-why-refresh">
+            <h3 id="ins-why-refresh" class="instructions-sheet__heading">Why a normal refresh might not show “the latest”</h3>
+            <p class="instructions-sheet__p">
+              This page keeps a copy in your browser. Refreshing only reloads the page—it does not always replace that copy with the newest <code>catalog.json</code> from the server. Use <strong>Load latest from website</strong> when you want this browser to match what is online (for example after someone else published).
+            </p>
           </section>
 
           <section class="instructions-sheet__section" aria-labelledby="ins-confirm">
