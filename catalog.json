@@ -179,7 +179,7 @@
       ],
       "label": "Butterfly Metal Wall Art 2 sets of each",
       "price": 5,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Butterfly Metal Wall Art 2 sets of each"
     },
     {
@@ -604,6 +604,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": false
+    "standaloneCollapsed": true
   }
 }
