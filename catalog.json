@@ -314,6 +314,16 @@
       "price": 20,
       "sold": false,
       "availabilityNote": "Angel Statue x 2, price per piece."
+    },
+    {
+      "id": "ngttzgdunmnqqdggn",
+      "images": [
+        "images/IMG_20260401_183243363.jpg"
+      ],
+      "label": "antique chair",
+      "price": 25,
+      "sold": false,
+      "availabilityNote": "Antique Chair"
     }
   ],
   "categories": [
