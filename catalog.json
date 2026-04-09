@@ -385,12 +385,12 @@
       "title": "Living Room Tables",
       "offerAsSet": true,
       "setPrice": 100,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "mick2zxcymnmmrej4",
           "label": "Coffee Table",
-          "individual": true,
+          "individual": false,
           "price": 50,
           "sold": false,
           "availabilityNote": "Granite Inlay with wooden frame",
@@ -401,7 +401,7 @@
         {
           "id": "07ntwp21lmnmmsjwo",
           "label": "End Table 1",
-          "individual": true,
+          "individual": false,
           "price": 25,
           "sold": false,
           "availabilityNote": "Granite Inlay with wooden frame",
@@ -412,7 +412,7 @@
         {
           "id": "32ju8y1wsmnmmwq5m",
           "label": "End Table 2",
-          "individual": true,
+          "individual": false,
           "price": 25,
           "sold": false,
           "availabilityNote": "Granite Inlay with wooden frame",
@@ -427,12 +427,12 @@
       "title": "Bedroom Set 2",
       "offerAsSet": true,
       "setPrice": 300,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "slqwav05zmnmn4cg6",
           "label": "bed",
-          "individual": true,
+          "individual": false,
           "price": 125,
           "sold": false,
           "availabilityNote": "Bedroom Set 2",
@@ -443,7 +443,7 @@
         {
           "id": "mgri8qedcmnmn5uxa",
           "label": "vanity dresser",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Bedroom Set 2",
@@ -455,7 +455,7 @@
         {
           "id": "ofpgjl8mdmnmn6run",
           "label": "dresser",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "Bedroom Set 2",
@@ -471,7 +471,7 @@
       "title": "Bedroom Set 3",
       "offerAsSet": true,
       "setPrice": 225,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "jmtsa2w3vmnmnyh4a",
@@ -479,7 +479,7 @@
             "images/IMG_20260404_145039954.jpg"
           ],
           "label": "bed",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Bedroom Set 3"
@@ -490,7 +490,7 @@
             "images/IMG_20260405_153415508.jpg"
           ],
           "label": "vanity dresser",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Bedroom Set 3"
@@ -501,7 +501,7 @@
             "/images/IMG_20260404_145048224.jpg"
           ],
           "label": "End Table",
-          "individual": true,
+          "individual": false,
           "price": 25,
           "sold": false,
           "availabilityNote": ""
@@ -513,7 +513,7 @@
       "title": "Couch Set 1",
       "offerAsSet": true,
       "setPrice": 150,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "1jam6d3pymnmoimn4",
@@ -521,7 +521,7 @@
             "images/IMG_20260404_145414110.jpg"
           ],
           "label": "Green Couch",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "these are like new"
@@ -532,7 +532,7 @@
             "images/IMG_20260404_145403784.jpg"
           ],
           "label": "green love seat",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "these are like new"
@@ -544,7 +544,7 @@
       "title": "Living Room Furniture",
       "offerAsSet": true,
       "setPrice": 200,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "oh4adnhchmnnwaqy9",
@@ -552,7 +552,7 @@
             "images/IMG_20260406_142046885.jpg"
           ],
           "label": "Living Room Couch",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Living Room Couch"
@@ -563,7 +563,7 @@
             "images/IMG_20260406_142053294.jpg"
           ],
           "label": "Love seat Sofa",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Love seat Sofa"
