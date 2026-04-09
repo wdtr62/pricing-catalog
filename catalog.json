@@ -336,7 +336,7 @@
         {
           "id": "d6r50wua0mnmkhwur",
           "label": "br1-1",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -347,7 +347,7 @@
         {
           "id": "0nm2a20mgmnml95bb",
           "label": "br1-2",
-          "individual": true,
+          "individual": false,
           "price": 50,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -358,7 +358,7 @@
         {
           "id": "yvaz2sp5mmnmlar1o",
           "label": "br1-3",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -369,7 +369,7 @@
         {
           "id": "czpyl48ramnmldk4n",
           "label": "br1-4",
-          "individual": true,
+          "individual": false,
           "price": 50,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -378,7 +378,7 @@
           ]
         }
       ],
-      "collapsed": true
+      "collapsed": false
     },
     {
       "id": "tqt3oj39zmnmmrbu7",
@@ -513,7 +513,7 @@
       "title": "Couch Set 1",
       "offerAsSet": true,
       "setPrice": 150,
-      "collapsed": false,
+      "collapsed": true,
       "entries": [
         {
           "id": "1jam6d3pymnmoimn4",
@@ -544,7 +544,7 @@
       "title": "Living Room Furniture",
       "offerAsSet": true,
       "setPrice": 200,
-      "collapsed": false,
+      "collapsed": true,
       "entries": [
         {
           "id": "oh4adnhchmnnwaqy9",
@@ -614,6 +614,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": false
+    "standaloneCollapsed": true
   }
 }
