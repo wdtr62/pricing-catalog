@@ -261,7 +261,7 @@
       ],
       "label": "Scarlet Red Curtains",
       "price": 15,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Scarlet Red Curtains"
     },
     {
@@ -614,6 +614,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
