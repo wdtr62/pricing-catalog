@@ -98,7 +98,7 @@
       ],
       "label": "glass spring garden trifle bowl",
       "price": 20,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "glass spring garden trifle bowl"
     },
     {
@@ -108,7 +108,7 @@
       ],
       "label": "Vintage Glass 12” Pedestal Cake Dessert Stand w/ Heavy Dome",
       "price": 20,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Vintage Glass 12” Pedestal Cake Dessert Stand w/ Heavy Dome"
     },
     {
@@ -118,7 +118,7 @@
       ],
       "label": "Glass Water Pitcher",
       "price": 10,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Glass Water Pitcher"
     },
     {
