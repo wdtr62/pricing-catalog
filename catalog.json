@@ -48,7 +48,7 @@
       ],
       "label": "Large Antique Mirror",
       "price": 75,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "beautiful piece"
     },
     {
@@ -68,7 +68,7 @@
       ],
       "label": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets",
       "price": 15,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets"
     },
     {
@@ -199,7 +199,7 @@
       ],
       "label": "modern armchair",
       "price": 30,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "modern armchair"
     },
     {
@@ -271,7 +271,7 @@
       ],
       "label": "Burgundy, Ivory and gold tones Rug",
       "price": 15,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Burgundy, Ivory and gold tones Rug"
     },
     {
@@ -302,7 +302,7 @@
       ],
       "label": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets",
       "price": 40,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets"
     },
     {
@@ -378,7 +378,7 @@
           ]
         }
       ],
-      "collapsed": false
+      "collapsed": true
     },
     {
       "id": "tqt3oj39zmnmmrbu7",
@@ -575,7 +575,7 @@
       "title": "Whirlpool Washer & Dryer",
       "offerAsSet": true,
       "setPrice": 250,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "op84ym8psmnnzbssv",
@@ -585,7 +585,7 @@
           "label": "Whirlpool Washer & Dryer",
           "individual": true,
           "price": 250,
-          "sold": false,
+          "sold": true,
           "availabilityNote": "Whirlpool Washer & Dryer"
         },
         {
@@ -596,7 +596,7 @@
           "label": "washer",
           "individual": true,
           "price": 125,
-          "sold": false,
+          "sold": true,
           "availabilityNote": "washer"
         },
         {
@@ -607,13 +607,13 @@
           "label": "Dryer",
           "individual": true,
           "price": 125,
-          "sold": false,
+          "sold": true,
           "availabilityNote": "Dryer"
         }
       ]
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
