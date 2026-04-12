@@ -423,7 +423,7 @@
         "images/tUSj5Pc4.jpeg"
       ],
       "label": "wall decor",
-      "price": 4.99,
+      "price": 5,
       "sold": true,
       "availabilityNote": "wall decor"
     },
@@ -474,7 +474,7 @@
       ],
       "label": "flower curtains",
       "price": 10,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "flower curtains"
     },
     {
@@ -786,6 +786,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": false
+    "standaloneCollapsed": true
   }
 }
