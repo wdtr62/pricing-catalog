@@ -3,9 +3,9 @@
     {
       "id": "6i0guch6gmnmm9yvj",
       "label": "End-t1  x 2",
-      "price": 75,
+      "price": 50,
       "sold": false,
-      "availabilityNote": "This is a pair of tables. price per piece",
+      "availabilityNote": "This is a pair of tables. price for the pair",
       "images": [
         "images/IMG_20260404_144731543.jpg",
         "images/IMG_20260404_144800233.jpg"
@@ -706,6 +706,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
