@@ -416,6 +416,86 @@
       "price": 5,
       "sold": false,
       "availabilityNote": "2 picture frames of beautiful sceneries."
+    },
+    {
+      "id": "f7r1gwdg9mnvbzogq",
+      "images": [
+        "images/tUSj5Pc4.jpeg"
+      ],
+      "label": "wall decor",
+      "price": 4.99,
+      "sold": true,
+      "availabilityNote": "wall decor"
+    },
+    {
+      "id": "t2onuxj8wmnvbzow4",
+      "images": [
+        "images/BBLV-5mG.jpeg"
+      ],
+      "label": "wall decor",
+      "price": 5,
+      "sold": true,
+      "availabilityNote": "wall decor"
+    },
+    {
+      "id": "ttbczez4omnvbzqw6",
+      "images": [
+        "images/7XP46Obp.jpeg"
+      ],
+      "label": "wall decor",
+      "price": 5,
+      "sold": true,
+      "availabilityNote": "wall decor"
+    },
+    {
+      "id": "s2mr8ilbmmnvbzr98",
+      "images": [
+        "images/ULPYqRn6.jpeg"
+      ],
+      "label": "Large Syroco Mid-Century Modern Wall Decor",
+      "price": 20,
+      "sold": false,
+      "availabilityNote": "Large Syroco Mid-Century Modern Wall Decor"
+    },
+    {
+      "id": "umgevh8svmnvc0s6t",
+      "images": [
+        "images/XcmyFA1O.jpeg"
+      ],
+      "label": "leopard pillows",
+      "price": 5,
+      "sold": false,
+      "availabilityNote": "leopard pillows"
+    },
+    {
+      "id": "t3pwu9sttmnvc0ufy",
+      "images": [
+        "images/lumyU75D.jpeg"
+      ],
+      "label": "flower curtains",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "flower curtains"
+    },
+    {
+      "id": "bl5lsh0yamnvc0umw",
+      "images": [
+        "images/MhJZe5Er.jpeg"
+      ],
+      "label": "red curtains",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "red curtains"
+    },
+    {
+      "id": "4yldbw23lmnvc1foq",
+      "images": [
+        "images/NGs3-Hus.jpeg"
+      ],
+      "label": "yellow gold curtains",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "yellow gold curtains"
     }
   ],
   "categories": [
