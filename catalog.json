@@ -382,7 +382,7 @@
         "images/4-26-26/IMG_20260412_131432739.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -392,7 +392,7 @@
         "images/4-26-26/IMG_20260412_131442308.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -402,7 +402,7 @@
         "images/4-26-26/IMG_20260412_131450301.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -412,7 +412,7 @@
         "images/4-26-26/IMG_20260412_131456302.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -422,7 +422,7 @@
         "images/4-26-26/IMG_20260412_131506422.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -432,7 +432,7 @@
         "images/4-26-26/IMG_20260412_131514324.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -442,7 +442,7 @@
         "images/4-26-26/IMG_20260412_131520816.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -452,7 +452,7 @@
         "images/4-26-26/IMG_20260412_131529252.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -462,7 +462,7 @@
         "images/4-26-26/IMG_20260412_131534863.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -472,7 +472,7 @@
         "images/4-26-26/IMG_20260412_131542334.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     },
@@ -482,7 +482,7 @@
         "images/4-26-26/IMG_20260412_131549788.jpg"
       ],
       "label": "",
-      "price": null,
+      "price": 2,
       "sold": false,
       "availabilityNote": ""
     }
@@ -806,6 +806,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": false
+    "standaloneCollapsed": true
   }
 }
