@@ -355,6 +355,136 @@
       "price": 5,
       "sold": false,
       "availabilityNote": "Villa House 4-piece Canister Set"
+    },
+    {
+      "id": "rw5cweomumog32khp",
+      "images": [
+        "images/4-26-26/IMG_20260412_131416016.jpg"
+      ],
+      "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
+      "price": 2,
+      "sold": false,
+      "availabilityNote": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen"
+    },
+    {
+      "id": "rb8rtr4tzmog3a10d",
+      "images": [
+        "images/4-26-26/IMG_20260412_131426526.jpg"
+      ],
+      "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
+      "price": 2,
+      "sold": false,
+      "availabilityNote": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen"
+    },
+    {
+      "id": "yulzhw37emog3cerj",
+      "images": [
+        "images/4-26-26/IMG_20260412_131432739.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "6vyafhxrimog3g33j",
+      "images": [
+        "images/4-26-26/IMG_20260412_131442308.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "vyrnh6u3cmog3g3cd",
+      "images": [
+        "images/4-26-26/IMG_20260412_131450301.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "iqx08gj6omog3g5tq",
+      "images": [
+        "images/4-26-26/IMG_20260412_131456302.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "2h2ahzloumog3g5zl",
+      "images": [
+        "images/4-26-26/IMG_20260412_131506422.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "dcj39gfg7mog3g64o",
+      "images": [
+        "images/4-26-26/IMG_20260412_131514324.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "18ariasj8mog3h5lf",
+      "images": [
+        "images/4-26-26/IMG_20260412_131520816.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "yzp6g9ee2mog3h5t7",
+      "images": [
+        "images/4-26-26/IMG_20260412_131529252.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "fnz9vx0uemog3h78u",
+      "images": [
+        "images/4-26-26/IMG_20260412_131534863.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "lwgtblupimog3h9sp",
+      "images": [
+        "images/4-26-26/IMG_20260412_131542334.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "57005db60mog3h9z8",
+      "images": [
+        "images/4-26-26/IMG_20260412_131549788.jpg"
+      ],
+      "label": "",
+      "price": null,
+      "sold": false,
+      "availabilityNote": ""
     }
   ],
   "categories": [
@@ -676,6 +806,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
