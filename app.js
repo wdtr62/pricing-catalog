@@ -60,6 +60,8 @@
   const btnLock = document.getElementById("btnLock");
   const btnInstructions = document.getElementById("btnInstructions");
   const instructionsModal = document.getElementById("instructionsModal");
+  const btnBuyerGuide = document.getElementById("btnBuyerGuide");
+  const buyerGuideModal = document.getElementById("buyerGuideModal");
   const authModal = document.getElementById("authModal");
   const authPassword = document.getElementById("authPassword");
   const authSubmit = document.getElementById("authSubmit");
@@ -465,6 +467,9 @@
     if (instructionsModal && !instructionsModal.hidden) {
       closeInstructionsModal();
     }
+    if (buyerGuideModal && !buyerGuideModal.hidden) {
+      closeBuyerGuideModal();
+    }
     if (authModal && !authModal.hidden) {
       closeModal();
     }
@@ -539,6 +544,7 @@
     if (!isUnlocked()) return;
     if (previewModal && !previewModal.hidden) closePreviewModal();
     if (instructionsModal && !instructionsModal.hidden) closeInstructionsModal();
+    if (buyerGuideModal && !buyerGuideModal.hidden) closeBuyerGuideModal();
     if (importCatalogModal && !importCatalogModal.hidden) closeImportCatalogModal();
     if (authModal && !authModal.hidden) closeModal();
     if (publishGithubError) {
@@ -658,7 +664,6 @@
     if (on) sessionStorage.setItem(SESSION_UNLOCK, "1");
     else sessionStorage.removeItem(SESSION_UNLOCK);
     applyLockUI();
-    tryAutoSyncLockedCatalog(state);
   }
 
   function setEntryViewportTooltip(viewport) {
@@ -690,6 +695,9 @@
     }
     if (!unlocked && publishGithubModal && !publishGithubModal.hidden) {
       closePublishGithubModal();
+    }
+    if (!unlocked && buyerGuideModal && !buyerGuideModal.hidden) {
+      closeBuyerGuideModal();
     }
 
     root.querySelectorAll(".category__title-input").forEach(function (inp) {
@@ -893,6 +901,33 @@
     document.body.style.overflow = "";
   }
 
+  function closeBuyerGuideModal() {
+    if (buyerGuideModal) buyerGuideModal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  function openBuyerGuideModal() {
+    if (importCatalogModal && !importCatalogModal.hidden) {
+      closeImportCatalogModal();
+    }
+    if (publishGithubModal && !publishGithubModal.hidden) {
+      closePublishGithubModal();
+    }
+    if (previewModal && !previewModal.hidden) {
+      closePreviewModal();
+    }
+    if (authModal && !authModal.hidden) {
+      closeModal();
+    }
+    if (instructionsModal && !instructionsModal.hidden) {
+      closeInstructionsModal();
+    }
+    if (buyerGuideModal) {
+      buyerGuideModal.hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+  }
+
   function openInstructionsModal() {
     if (!isUnlocked()) return;
     if (importCatalogModal && !importCatalogModal.hidden) {
@@ -900,6 +935,9 @@
     }
     if (previewModal && !previewModal.hidden) {
       closePreviewModal();
+    }
+    if (buyerGuideModal && !buyerGuideModal.hidden) {
+      closeBuyerGuideModal();
     }
     if (authModal && !authModal.hidden) {
       closeModal();
@@ -973,6 +1011,9 @@
 
   function openPreviewModal(ent, cat, state, startSlideIndex) {
     if (!previewModal || !ent) return;
+    if (buyerGuideModal && !buyerGuideModal.hidden) {
+      closeBuyerGuideModal();
+    }
     const n = entrySlideCount(ent);
     let start = 0;
     if (typeof startSlideIndex === "number" && !isNaN(startSlideIndex)) {
@@ -1710,6 +1751,9 @@
     if (instructionsModal && !instructionsModal.hidden) {
       closeInstructionsModal();
     }
+    if (buyerGuideModal && !buyerGuideModal.hidden) {
+      closeBuyerGuideModal();
+    }
     authModal.hidden = false;
     authError.hidden = true;
     authPassword.value = "";
@@ -1743,6 +1787,7 @@
     }
 
     applyLockUI();
+    tryAutoSyncLockedCatalog(state);
 
     document.addEventListener("dragend", function () {
       document.querySelectorAll(".entry__frame--drag").forEach(function (node) {
@@ -1774,6 +1819,15 @@
     if (instructionsModal) {
       instructionsModal.querySelectorAll("[data-close-instructions]").forEach(function (el) {
         el.addEventListener("click", closeInstructionsModal);
+      });
+    }
+
+    if (btnBuyerGuide) {
+      btnBuyerGuide.addEventListener("click", openBuyerGuideModal);
+    }
+    if (buyerGuideModal) {
+      buyerGuideModal.querySelectorAll("[data-close-buyer-guide]").forEach(function (el) {
+        el.addEventListener("click", closeBuyerGuideModal);
       });
     }
 
@@ -1955,6 +2009,10 @@
       if (ev.key === "Escape") {
         if (previewModal && !previewModal.hidden) {
           closePreviewModal();
+          return;
+        }
+        if (buyerGuideModal && !buyerGuideModal.hidden) {
+          closeBuyerGuideModal();
           return;
         }
         if (instructionsModal && !instructionsModal.hidden) {

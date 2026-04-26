@@ -35,6 +35,16 @@
           <button
             type="button"
             class="btn btn--secondary viewer-hover"
+            id="btnBuyerGuide"
+            aria-haspopup="dialog"
+            aria-controls="buyerGuideModal"
+            title="How to use this site, local pickup only, and how we handle purchases safely"
+          >
+            How buying works
+          </button>
+          <button
+            type="button"
+            class="btn btn--secondary viewer-hover"
             id="btnUnlock"
             title="Are you the owner? Click here, then enter the password to add or change products and prices."
           >
@@ -249,6 +259,110 @@
 
         <div class="modal__actions instructions-sheet__footer">
           <button type="button" class="btn btn--primary" data-close-instructions>Done</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="buyerGuideModal" class="modal modal--instructions" hidden>
+      <div class="modal__backdrop" data-close-buyer-guide></div>
+      <div class="modal__panel modal__panel--instructions" role="dialog" aria-modal="true" aria-labelledby="buyerGuideModalTitle">
+        <button type="button" class="modal__close-x viewer-hover" data-close-buyer-guide aria-label="Close">×</button>
+        <h2 id="buyerGuideModalTitle" class="modal__title instructions-sheet__title">Using this site &amp; how purchases work</h2>
+        <p class="instructions-sheet__intro">
+          Thank you for your interest. Please read this page in full before contacting us. This listing is offered in good faith on behalf of <strong>Mrs. Ruttland</strong> and her family; we ask that you respect our time and the guidelines below.
+        </p>
+
+        <div class="instructions-sheet">
+          <section class="instructions-sheet__section" aria-labelledby="bg-how-site">
+            <h3 id="bg-how-site" class="instructions-sheet__heading">How to use this catalog</h3>
+            <ul class="instructions-sheet__list instructions-sheet__list--caution">
+              <li>Browse by category or single items. Click a photo to see it larger with price and details.</li>
+              <li>
+                We <strong>update this site as we add newly available items</strong> (photos, descriptions, prices, and sold status). <strong>Every time you visit</strong>, please click <strong>Load latest</strong> at the top so your browser pulls the newest catalog from the site—then refresh if the page asks. That is the reliable way to see what is actually for sale right now.
+              </li>
+              <li>This website is a <strong>catalog only</strong>. It does not process payments. When you are ready to buy, you will arrange payment and pickup with us directly, following the steps below.</li>
+            </ul>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="bg-local">
+            <h3 id="bg-local" class="instructions-sheet__heading">Local pickup only — Gosnell, Arkansas area</h3>
+            <p class="instructions-sheet__p">
+              We are posting this for <strong>local marketplace buyers</strong> who can pick up in person near <strong>Gosnell, Arkansas</strong>. We <strong>do not ship</strong> items and we <strong>do not deliver</strong>—you pick up from the agreed location. If you do not live in this vicinity or cannot travel here for pickup, please <strong>do not pursue a purchase</strong> through this listing.
+            </p>
+            <p class="instructions-sheet__p">
+              For <strong>larger or heavy items</strong>, you need the <strong>right equipment to transport them yourself</strong> (for example a suitable vehicle, trailer, straps, blankets, or enough help to load safely—whatever the piece requires). Plan ahead before you buy.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="bg-safety">
+            <h3 id="bg-safety" class="instructions-sheet__heading">Safe meeting policy (Gosnell Police Department)</h3>
+            <p class="instructions-sheet__p">
+              For everyone’s safety, we will ask buyers to meet us at the <strong>Gosnell Police Department</strong> before we go further with a transaction. We know that may sound formal, but it is the approach we are most comfortable with for strangers meeting to exchange money and property.
+            </p>
+            <ul class="instructions-sheet__list instructions-sheet__list--caution">
+              <li>
+                <strong>Smaller items</strong> that we can reasonably bring to the station: we will bring the item(s) there so you can see what you are buying before you pay.
+              </li>
+              <li>
+                <strong>Larger items</strong> we cannot transport to the department: we will still meet you at the police department first so we can introduce ourselves, confirm serious intent, and agree on terms. After you purchase the item, we will coordinate a separate step to pick up the item from its location—<strong>you must bring whatever vehicle, trailer, or help you need</strong> to move it; we do not deliver.
+              </li>
+            </ul>
+            <p class="instructions-sheet__p">
+              This is the only process we are using so the exchange stays as <strong>safe and transparent as possible for both sides</strong>. You get to know who we are, and we get to know who you are, in a public setting with law enforcement nearby.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="bg-payment">
+            <h3 id="bg-payment" class="instructions-sheet__heading">Payment methods</h3>
+            <p class="instructions-sheet__p">
+              We <strong>accept payment only</strong> by:
+            </p>
+            <ul class="instructions-sheet__list instructions-sheet__list--caution">
+              <li><strong>PayPal</strong></li>
+              <li><strong>Cash App</strong></li>
+              <li><strong>Cash</strong></li>
+            </ul>
+            <p class="instructions-sheet__p">
+              We do not accept other payment types. The price is agreed when you commit to an item.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="bg-hours">
+            <h3 id="bg-hours" class="instructions-sheet__heading">Scheduling &amp; decent hours</h3>
+            <p class="instructions-sheet__p">
+              We follow a <strong>decent-hours</strong> policy: meetings, pickups, and payment handoffs are scheduled at <strong>reasonable times of day</strong>—not unreasonably early, not late at night, and in a way that respects everyone’s safety and comfort.
+            </p>
+            <p class="instructions-sheet__p">
+              Because I work during the day, <strong>transactions are arranged for later in the afternoon, after I get off work</strong>, so that <strong>my wife does not have to handle them alone</strong>. When we set a time with you, it will be within that window unless we clearly agree otherwise.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="bg-why">
+            <h3 id="bg-why" class="instructions-sheet__heading">Why we are doing this</h3>
+            <p class="instructions-sheet__p">
+              <strong>Mrs. Mary Ruttland</strong>, a retired school teacher here in Gosnell, has become ill with dementia. Her son has taken her to <strong>North Carolina</strong>, where she now lives in a <strong>care facility</strong> that can help meet her needs. Her family has asked us to help sell items from her home to <strong>raise additional income toward her housing and care</strong>.
+            </p>
+            <p class="instructions-sheet__p">
+              Many people in this area were taught by Mrs. Ruttland when she was in the classroom, and many will miss seeing her around town. <strong>I</strong> was her <strong>next-door neighbor for many years</strong>, and I cared for her a great deal—I looked out for her, checked in often, and valued the friendship and the long talks we had across the fence through the years. <strong>I am the one doing this work</strong>—building this site, listing items, and meeting buyers—because her family asked for help and because it matters to me to honor her with honesty and respect. If you knew her, I hope that helps you see these sales are not anonymous “flip” listings; they come from a difficult family transition for someone who meant a lot to this community and to me personally.
+            </p>
+            <p class="instructions-sheet__p">
+              Items are priced <strong>well below typical retail</strong> because the goal is to move them responsibly and put funds where they are needed. My wife and I are not a store with staff hours; we are helping her family in a way we can manage, with care.
+            </p>
+          </section>
+
+          <section class="instructions-sheet__section" aria-labelledby="bg-serious">
+            <h3 id="bg-serious" class="instructions-sheet__heading">Serious buyers only</h3>
+            <p class="instructions-sheet__p">
+              My wife and I have limited time. Please contact us only if you are <strong>seriously interested</strong> in an item and can follow the <strong>local pickup</strong> and <strong>police-station meeting</strong> process described above. Kindly do not use this listing for casual browsing, lowball games, or no-shows.
+            </p>
+            <p class="instructions-sheet__p">
+              If something is marked sold or removed, it is no longer available. We appreciate your understanding and your respect for Mrs. Ruttland and her family.
+            </p>
+          </section>
+        </div>
+
+        <div class="modal__actions instructions-sheet__footer">
+          <button type="button" class="btn btn--primary viewer-hover" data-close-buyer-guide>Close</button>
         </div>
       </div>
     </div>
