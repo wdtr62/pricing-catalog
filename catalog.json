@@ -485,6 +485,109 @@
       "price": 2,
       "sold": false,
       "availabilityNote": "Vintage Angelic Angels & Flowers Hanging Wall Planter"
+    },
+    {
+      "id": "w07nu8g42mog48170",
+      "images": [
+        "images/4-26-26/IMG_20260412_131559559.jpg"
+      ],
+      "label": "Floral framed art",
+      "price": 2,
+      "sold": false,
+      "availabilityNote": "Floral framed art"
+    },
+    {
+      "id": "02yy1edg0mog483sy",
+      "images": [
+        "images/4-26-26/IMG_20260416_182541361.jpg",
+        "images/4-26-26/IMG_20260416_182554070.jpg",
+        "images/4-26-26/IMG_20260416_182610554.jpg"
+      ],
+      "label": "Set of three Vintage Chinese Wall Panels - Mother of Pearl and black lacquer",
+      "price": 20,
+      "sold": false,
+      "availabilityNote": "Set of three Vintage Chinese Wall Panels - Mother of Pearl and black lacquer"
+    },
+    {
+      "id": "vj4cahjl9mog4844q",
+      "images": [
+        "images/4-26-26/IMG_20260412_131652661.jpg"
+      ],
+      "label": "Pair of Black Wrought Iron Scroll Work Wall Sconces",
+      "price": 4.99,
+      "sold": false,
+      "availabilityNote": "Pair of Black Wrought Iron Scroll Work Wall Sconces"
+    },
+    {
+      "id": "zsv8wxveymog49cpd",
+      "images": [
+        "images/4-26-26/IMG_20260412_131721652.jpg"
+      ],
+      "label": "Floral framed art",
+      "price": 2,
+      "sold": false,
+      "availabilityNote": "Floral framed art"
+    },
+    {
+      "id": "mi05vkslfmog4bno9",
+      "images": [
+        "images/4-26-26/IMG_20260412_132120543.jpg"
+      ],
+      "label": "ANCHOR HOCKING Clear Prescut 1960s Star Of David Patterned Punch Bowl",
+      "price": 7,
+      "sold": false,
+      "availabilityNote": "ANCHOR HOCKING Clear Prescut 1960s Star Of David Patterned Punch Bowl"
+    },
+    {
+      "id": "wde5xd1temog4bpkq",
+      "images": [
+        "images/4-26-26/IMG_20260412_132156993.jpg"
+      ],
+      "label": "Korona/Southington BAUM Rose Briar Made In POLAND china set",
+      "price": 50,
+      "sold": false,
+      "availabilityNote": ""
+    },
+    {
+      "id": "wkamlmswlmog4bpr9",
+      "images": [
+        "images/4-26-26/IMG_20260412_132402903.jpg"
+      ],
+      "label": "A ROYAL ALBERT 'HAWORTH' BONE CHINA",
+      "price": 75,
+      "sold": false,
+      "availabilityNote": "A ROYAL ALBERT 'HAWORTH' BONE CHINA"
+    },
+    {
+      "id": "qyt43vfedmog4gqh9",
+      "images": [
+        "images/4-26-26/IMG_20260412_132500139.jpg"
+      ],
+      "label": "Vtg Pressed Glass Starburst Pattern Fluted Flared Bowl Short Vase Scallop Trim",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "Vtg Pressed Glass Starburst Pattern Fluted Flared Bowl Short Vase Scallop Trim"
+    },
+    {
+      "id": "edl2np3w5mog4grpo",
+      "images": [
+        "images/4-26-26/IMG_20260412_132603116.jpg"
+      ],
+      "label": "Northlight 18\" Distressed Gray Girl Statue",
+      "price": 14.99,
+      "sold": false,
+      "availabilityNote": "Northlight 18\" Distressed Gray Girl Statue"
+    },
+    {
+      "id": "otjvc22gvmog4grw0",
+      "images": [
+        "images/4-26-26/IMG_20260412_132645065.jpg",
+        "images/4-26-26/IMG_20260412_132652877.jpg"
+      ],
+      "label": "Pair of SPECTACULAR VINTAGE ART DECO BEVELED ETCHED PEACOCK MIRROR",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "Pair of SPECTACULAR VINTAGE ART DECO BEVELED ETCHED PEACOCK MIRROR"
     }
   ],
   "categories": [
