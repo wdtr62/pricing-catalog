@@ -1764,7 +1764,24 @@
     authModal.hidden = true;
   }
 
+  /** Register early so the button works even if catalog bootstrap is slow or fails. */
+  function wireBuyerGuideUi() {
+    if (btnBuyerGuide) {
+      btnBuyerGuide.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        openBuyerGuideModal();
+      });
+    }
+    if (buyerGuideModal) {
+      buyerGuideModal.querySelectorAll("[data-close-buyer-guide]").forEach(function (el) {
+        el.addEventListener("click", closeBuyerGuideModal);
+      });
+    }
+  }
+
   function init() {
+    wireBuyerGuideUi();
+
     loadStateWithBootstrap().then(function (state) {
       catalogState = state;
 
@@ -1819,15 +1836,6 @@
     if (instructionsModal) {
       instructionsModal.querySelectorAll("[data-close-instructions]").forEach(function (el) {
         el.addEventListener("click", closeInstructionsModal);
-      });
-    }
-
-    if (btnBuyerGuide) {
-      btnBuyerGuide.addEventListener("click", openBuyerGuideModal);
-    }
-    if (buyerGuideModal) {
-      buyerGuideModal.querySelectorAll("[data-close-buyer-guide]").forEach(function (el) {
-        el.addEventListener("click", closeBuyerGuideModal);
       });
     }
 
