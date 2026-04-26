@@ -3,9 +3,9 @@
     {
       "id": "6i0guch6gmnmm9yvj",
       "label": "End-t1  x 2",
-      "price": 75,
+      "price": 50,
       "sold": false,
-      "availabilityNote": "This is a Pair of tables.",
+      "availabilityNote": "This is a pair of tables. price for the pair",
       "images": [
         "images/IMG_20260404_144731543.jpg",
         "images/IMG_20260404_144800233.jpg"
@@ -48,7 +48,7 @@
       ],
       "label": "Large Antique Mirror",
       "price": 75,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "beautiful piece"
     },
     {
@@ -68,7 +68,7 @@
       ],
       "label": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets",
       "price": 15,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets"
     },
     {
@@ -98,7 +98,7 @@
       ],
       "label": "glass spring garden trifle bowl",
       "price": 20,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "glass spring garden trifle bowl"
     },
     {
@@ -108,7 +108,7 @@
       ],
       "label": "Vintage Glass 12” Pedestal Cake Dessert Stand w/ Heavy Dome",
       "price": 20,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Vintage Glass 12” Pedestal Cake Dessert Stand w/ Heavy Dome"
     },
     {
@@ -118,7 +118,7 @@
       ],
       "label": "Glass Water Pitcher",
       "price": 10,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Glass Water Pitcher"
     },
     {
@@ -127,9 +127,9 @@
         "images/IMG_20260404_152937940_HDR.jpg"
       ],
       "label": "Set of gold-colored wine glasses 6 pieces",
-      "price": 10,
+      "price": 5,
       "sold": false,
-      "availabilityNote": "Set of gold-colored wine glasses 6 pieces"
+      "availabilityNote": "Set of gold-colored wine glasses 6 pieces, price per piece"
     },
     {
       "id": "68nzvv466mnmpywfa",
@@ -179,7 +179,7 @@
       ],
       "label": "Butterfly Metal Wall Art 2 sets of each",
       "price": 5,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Butterfly Metal Wall Art 2 sets of each"
     },
     {
@@ -199,7 +199,7 @@
       ],
       "label": "modern armchair",
       "price": 30,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "modern armchair"
     },
     {
@@ -207,10 +207,10 @@
       "images": [
         "images/IMG_20260405_153207107.jpg"
       ],
-      "label": "????",
+      "label": "home decorations",
       "price": 5,
       "sold": false,
-      "availabilityNote": "????"
+      "availabilityNote": "home decorations, price per piece"
     },
     {
       "id": "tpe5vl8j9mnnuodl9",
@@ -222,16 +222,6 @@
       "price": 20,
       "sold": false,
       "availabilityNote": "Tribal Mask Wall Hanging-Hand Carved and Hand Painted-Large 22\" Price Per piece. 4 pieces total"
-    },
-    {
-      "id": "ile7f0972mnnuofey",
-      "images": [
-        "images/IMG_20260404_144636378.jpg"
-      ],
-      "label": "50 inch samsung led tv",
-      "price": 25,
-      "sold": false,
-      "availabilityNote": "50 inch samsung led tv"
     },
     {
       "id": "h77zz79r6mnnuofmy",
@@ -249,7 +239,7 @@
         "images/IMG_20260404_144653183.jpg"
       ],
       "label": "Med lift Power Chair",
-      "price": null,
+      "price": 75,
       "sold": false,
       "availabilityNote": "Med lift Power Chair. This chair will stand you straight up."
     },
@@ -259,7 +249,7 @@
         "images/IMG_20260404_144644461.jpg"
       ],
       "label": "cocktail cabinet ",
-      "price": 100,
+      "price": 50,
       "sold": false,
       "availabilityNote": "A gorgeous and highly unusual retro cocktail cabinet "
     },
@@ -271,7 +261,7 @@
       ],
       "label": "Scarlet Red Curtains",
       "price": 15,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Scarlet Red Curtains"
     },
     {
@@ -281,7 +271,7 @@
       ],
       "label": "Burgundy, Ivory and gold tones Rug",
       "price": 15,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Burgundy, Ivory and gold tones Rug"
     },
     {
@@ -290,10 +280,10 @@
         "images/IMG_20260405_153435869.jpg",
         "images/IMG_20260405_153426182.jpg"
       ],
-      "label": "decorative flower pattern vase x 2",
+      "label": "decorative flower pattern vase x 2, price per piece.",
       "price": 10,
-      "sold": false,
-      "availabilityNote": "decorative flower pattern vase x 2"
+      "sold": true,
+      "availabilityNote": "decorative flower pattern vase x 2, price per piece"
     },
     {
       "id": "rbvp37wp7mnnz1ozu",
@@ -301,19 +291,9 @@
         "images/IMG_20260405_144440783.jpg"
       ],
       "label": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2",
-      "price": 20,
-      "sold": false,
-      "availabilityNote": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2"
-    },
-    {
-      "id": "3bdgjpzdzmnnz1qo3",
-      "images": [
-        "images/IMG_20260404_151038517.jpg"
-      ],
-      "label": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets",
-      "price": 40,
-      "sold": false,
-      "availabilityNote": "Tiara Sandwich Amber Decanter with Tray and 8 Goblets"
+      "price": 10,
+      "sold": true,
+      "availabilityNote": "Vintage Empoli Emerald Green Glass Corset Genie Bottle x 2, price per piece"
     },
     {
       "id": "qnmglahmsmnnz1qvw",
@@ -323,12 +303,204 @@
       "label": "Angel Statue x 2",
       "price": 20,
       "sold": false,
-      "availabilityNote": "Angel Statue x 2"
+      "availabilityNote": "Angel Statue x 2, price per piece."
+    },
+    {
+      "id": "ngttzgdunmnqqdggn",
+      "images": [
+        "images/IMG_20260401_183243363.jpg"
+      ],
+      "label": "antique chair",
+      "price": 25,
+      "sold": false,
+      "availabilityNote": "Antique Chair"
+    },
+    {
+      "id": "dsdos7mysmnv7k193",
+      "images": [
+        "images/IMG_20260409_113817060.jpg"
+      ],
+      "label": "Book Collection",
+      "price": 4.98,
+      "sold": false,
+      "availabilityNote": "ChildCraft set of books, great for children's learning."
+    },
+    {
+      "id": "a6qegtik8mnv7oiky",
+      "images": [
+        "images/IMG_20260409_113929590.jpg",
+        "images/IMG_20260409_113907453.jpg"
+      ],
+      "label": "Book Shelf",
+      "price": 75,
+      "sold": false,
+      "availabilityNote": "Beautiful oak barrister bookcase with leaded glass, a must for antique collectors."
+    },
+    {
+      "id": "574o2zuu3mnv7okw5",
+      "images": [
+        "images/IMG_20260409_114215366.jpg"
+      ],
+      "label": "Wall Table With matching mirror",
+      "price": 25,
+      "sold": true,
+      "availabilityNote": "Wall Table With matching mirror"
+    },
+    {
+      "id": "xqa57qciumnv7ol4m",
+      "images": [
+        "images/IMG_20260409_114556111.jpg"
+      ],
+      "label": "Decorative Centerpiece Bowl",
+      "price": 15,
+      "sold": false,
+      "availabilityNote": "Decorative Centerpiece Bowl with four decorative spheres."
+    },
+    {
+      "id": "g1cys7nuamnv8vfmd",
+      "images": [
+        "images/IMG_20260409_114649709.jpg"
+      ],
+      "label": "PHEASANT Statue",
+      "price": 5,
+      "sold": false,
+      "availabilityNote": "Vtg 1960\"s Holland Mold Ceramic PHEASANT Statue Figurine."
+    },
+    {
+      "id": "d350wn7lemnv8vhsy",
+      "images": [
+        "images/IMG_20260409_114654593.jpg"
+      ],
+      "label": "PHEASANT Statue",
+      "price": 5,
+      "sold": false,
+      "availabilityNote": "Vtg 1960s Holland Mold Ceramic PHEASANT Statue Figurine."
+    },
+    {
+      "id": "37xdhkof9mnv8vi20",
+      "images": [
+        "images/IMG_20260409_131754923.jpg",
+        "images/IMG_20260409_131809960.jpg"
+      ],
+      "label": "\"King Cake Plate \"River Scene\" Red\"",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "\"King Cake Plate \"River Scene\" Red\""
+    },
+    {
+      "id": "bn1cfnzy5mnv99bwq",
+      "images": [
+        "images/IMG_20260411_103217444.jpg"
+      ],
+      "label": "Lead Cut Crystal Footed Bowl Etched Rose Scalloped Sawtooth Edge",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "Lead Cut Crystal Footed Bowl Etched Rose Scalloped Sawtooth Edge"
+    },
+    {
+      "id": "1bohuqwpfmnv99jtl",
+      "images": [
+        "images/IMG_20260411_103651195_HDR.jpg"
+      ],
+      "label": "Flower on vase",
+      "price": 5.01,
+      "sold": false,
+      "availabilityNote": "A flower in a vase, three pictures in frames."
+    },
+    {
+      "id": "xcdb6k1aimnv99k1e",
+      "images": [
+        "images/IMG_20260411_103742036_HDR.jpg"
+      ],
+      "label": "Beautiful sceneries.",
+      "price": 5,
+      "sold": false,
+      "availabilityNote": "2 picture frames of beautiful sceneries."
+    },
+    {
+      "id": "f7r1gwdg9mnvbzogq",
+      "images": [
+        "images/tUSj5Pc4.jpeg"
+      ],
+      "label": "wall decor",
+      "price": 5,
+      "sold": true,
+      "availabilityNote": "wall decor"
+    },
+    {
+      "id": "t2onuxj8wmnvbzow4",
+      "images": [
+        "images/BBLV-5mG.jpeg"
+      ],
+      "label": "wall decor",
+      "price": 5,
+      "sold": true,
+      "availabilityNote": "wall decor"
+    },
+    {
+      "id": "ttbczez4omnvbzqw6",
+      "images": [
+        "images/7XP46Obp.jpeg"
+      ],
+      "label": "wall decor",
+      "price": 5,
+      "sold": true,
+      "availabilityNote": "wall decor"
+    },
+    {
+      "id": "s2mr8ilbmmnvbzr98",
+      "images": [
+        "images/ULPYqRn6.jpeg"
+      ],
+      "label": "Large Syroco Mid-Century Modern Wall Decor",
+      "price": 20,
+      "sold": false,
+      "availabilityNote": "Large Syroco Mid-Century Modern Wall Decor"
+    },
+    {
+      "id": "umgevh8svmnvc0s6t",
+      "images": [
+        "images/XcmyFA1O.jpeg"
+      ],
+      "label": "leopard pillows",
+      "price": 5,
+      "sold": false,
+      "availabilityNote": "leopard pillows"
+    },
+    {
+      "id": "t3pwu9sttmnvc0ufy",
+      "images": [
+        "images/lumyU75D.jpeg"
+      ],
+      "label": "flower curtains",
+      "price": 10,
+      "sold": true,
+      "availabilityNote": "flower curtains"
+    },
+    {
+      "id": "bl5lsh0yamnvc0umw",
+      "images": [
+        "images/MhJZe5Er.jpeg"
+      ],
+      "label": "red curtains",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "red curtains"
+    },
+    {
+      "id": "4yldbw23lmnvc1foq",
+      "images": [
+        "images/NGs3-Hus.jpeg"
+      ],
+      "label": "yellow gold curtains",
+      "price": 10,
+      "sold": false,
+      "availabilityNote": "yellow gold curtains"
     },
     {
       "id": "ogrbb9e71mog2gy0b",
       "images": [
-        "images/4-26-26/IMG_20260412_131329257.jpg"
+        "images/IMG_20260412_131329257.jpg"
       ],
       "label": "Villa House 4-piece Canister Set",
       "price": 5,
@@ -338,7 +510,7 @@
     {
       "id": "rw5cweomumog32khp",
       "images": [
-        "images/4-26-26/IMG_20260412_131416016.jpg"
+        "images/IMG_20260412_131416016.jpg"
       ],
       "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
       "price": 2,
@@ -348,7 +520,7 @@
     {
       "id": "rb8rtr4tzmog3a10d",
       "images": [
-        "images/4-26-26/IMG_20260412_131426526.jpg"
+        "images/IMG_20260412_131426526.jpg"
       ],
       "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
       "price": 2,
@@ -358,7 +530,7 @@
     {
       "id": "yulzhw37emog3cerj",
       "images": [
-        "images/4-26-26/IMG_20260412_131432739.jpg"
+        "images/IMG_20260412_131432739.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -368,7 +540,7 @@
     {
       "id": "6vyafhxrimog3g33j",
       "images": [
-        "images/4-26-26/IMG_20260412_131442308.jpg"
+        "images/IMG_20260412_131442308.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -378,7 +550,7 @@
     {
       "id": "vyrnh6u3cmog3g3cd",
       "images": [
-        "images/4-26-26/IMG_20260412_131450301.jpg"
+        "images/IMG_20260412_131450301.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -388,7 +560,7 @@
     {
       "id": "iqx08gj6omog3g5tq",
       "images": [
-        "images/4-26-26/IMG_20260412_131456302.jpg"
+        "images/IMG_20260412_131456302.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -398,7 +570,7 @@
     {
       "id": "2h2ahzloumog3g5zl",
       "images": [
-        "images/4-26-26/IMG_20260412_131506422.jpg"
+        "images/IMG_20260412_131506422.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -408,7 +580,7 @@
     {
       "id": "dcj39gfg7mog3g64o",
       "images": [
-        "images/4-26-26/IMG_20260412_131514324.jpg"
+        "images/IMG_20260412_131514324.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -418,7 +590,7 @@
     {
       "id": "18ariasj8mog3h5lf",
       "images": [
-        "images/4-26-26/IMG_20260412_131520816.jpg"
+        "images/IMG_20260412_131520816.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -428,7 +600,7 @@
     {
       "id": "yzp6g9ee2mog3h5t7",
       "images": [
-        "images/4-26-26/IMG_20260412_131529252.jpg"
+        "images/IMG_20260412_131529252.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -438,7 +610,7 @@
     {
       "id": "fnz9vx0uemog3h78u",
       "images": [
-        "images/4-26-26/IMG_20260412_131534863.jpg"
+        "images/IMG_20260412_131534863.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -448,7 +620,7 @@
     {
       "id": "lwgtblupimog3h9sp",
       "images": [
-        "images/4-26-26/IMG_20260412_131542334.jpg"
+        "images/IMG_20260412_131542334.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -458,7 +630,7 @@
     {
       "id": "57005db60mog3h9z8",
       "images": [
-        "images/4-26-26/IMG_20260412_131549788.jpg"
+        "images/IMG_20260412_131549788.jpg"
       ],
       "label": "Vintage Angelic Angels & Flowers Hanging Wall Planter",
       "price": 2,
@@ -468,7 +640,7 @@
     {
       "id": "w07nu8g42mog48170",
       "images": [
-        "images/4-26-26/IMG_20260412_131559559.jpg"
+        "images/IMG_20260412_131559559.jpg"
       ],
       "label": "Floral framed art",
       "price": 2,
@@ -478,7 +650,7 @@
     {
       "id": "02yy1edg0mog483sy",
       "images": [
-        "images/4-26-26/IMG_20260416_182541361.jpg",
+        "images/IMG_20260416_182541361.jpg",
         "images/4-26-26/IMG_20260416_182554070.jpg",
         "images/4-26-26/IMG_20260416_182610554.jpg"
       ],
@@ -490,7 +662,7 @@
     {
       "id": "vj4cahjl9mog4844q",
       "images": [
-        "images/4-26-26/IMG_20260412_131652661.jpg"
+        "images/IMG_20260412_131652661.jpg"
       ],
       "label": "Pair of Black Wrought Iron Scroll Work Wall Sconces",
       "price": 4.99,
@@ -500,7 +672,7 @@
     {
       "id": "zsv8wxveymog49cpd",
       "images": [
-        "images/4-26-26/IMG_20260412_131721652.jpg"
+        "images/IMG_20260412_131721652.jpg"
       ],
       "label": "Floral framed art",
       "price": 2,
@@ -510,7 +682,7 @@
     {
       "id": "mi05vkslfmog4bno9",
       "images": [
-        "images/4-26-26/IMG_20260412_132120543.jpg"
+        "images/IMG_20260412_132120543.jpg"
       ],
       "label": "ANCHOR HOCKING Clear Prescut 1960s Star Of David Patterned Punch Bowl",
       "price": 7,
@@ -520,7 +692,7 @@
     {
       "id": "wde5xd1temog4bpkq",
       "images": [
-        "images/4-26-26/IMG_20260412_132156993.jpg"
+        "images/IMG_20260412_132156993.jpg"
       ],
       "label": "Korona/Southington BAUM Rose Briar Made In POLAND china set",
       "price": 50,
@@ -530,7 +702,7 @@
     {
       "id": "wkamlmswlmog4bpr9",
       "images": [
-        "images/4-26-26/IMG_20260412_132402903.jpg"
+        "images/IMG_20260412_132402903.jpg"
       ],
       "label": "A ROYAL ALBERT 'HAWORTH' BONE CHINA",
       "price": 75,
@@ -540,7 +712,7 @@
     {
       "id": "qyt43vfedmog4gqh9",
       "images": [
-        "images/4-26-26/IMG_20260412_132500139.jpg"
+        "images/IMG_20260412_132500139.jpg"
       ],
       "label": "Vtg Pressed Glass Starburst Pattern Fluted Flared Bowl Short Vase Scallop Trim",
       "price": 10,
@@ -550,7 +722,7 @@
     {
       "id": "edl2np3w5mog4grpo",
       "images": [
-        "images/4-26-26/IMG_20260412_132603116.jpg"
+        "images/IMG_20260412_132603116.jpg"
       ],
       "label": "Northlight 18\" Distressed Gray Girl Statue",
       "price": 14.99,
@@ -560,8 +732,8 @@
     {
       "id": "otjvc22gvmog4grw0",
       "images": [
-        "images/4-26-26/IMG_20260412_132645065.jpg",
-        "images/4-26-26/IMG_20260412_132652877.jpg"
+        "images/IMG_20260412_132645065.jpg",
+        "images/IMG_20260412_132652877.jpg"
       ],
       "label": "Pair of SPECTACULAR VINTAGE ART DECO BEVELED ETCHED PEACOCK MIRROR",
       "price": 10,
@@ -579,7 +751,7 @@
         {
           "id": "d6r50wua0mnmkhwur",
           "label": "br1-1",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -590,7 +762,7 @@
         {
           "id": "0nm2a20mgmnml95bb",
           "label": "br1-2",
-          "individual": true,
+          "individual": false,
           "price": 50,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -601,7 +773,7 @@
         {
           "id": "yvaz2sp5mmnmlar1o",
           "label": "br1-3",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -612,7 +784,7 @@
         {
           "id": "czpyl48ramnmldk4n",
           "label": "br1-4",
-          "individual": true,
+          "individual": false,
           "price": 50,
           "sold": false,
           "availabilityNote": "Bedroom Set 1",
@@ -633,7 +805,7 @@
         {
           "id": "mick2zxcymnmmrej4",
           "label": "Coffee Table",
-          "individual": true,
+          "individual": false,
           "price": 50,
           "sold": false,
           "availabilityNote": "Granite Inlay with wooden frame",
@@ -644,7 +816,7 @@
         {
           "id": "07ntwp21lmnmmsjwo",
           "label": "End Table 1",
-          "individual": true,
+          "individual": false,
           "price": 25,
           "sold": false,
           "availabilityNote": "Granite Inlay with wooden frame",
@@ -655,7 +827,7 @@
         {
           "id": "32ju8y1wsmnmmwq5m",
           "label": "End Table 2",
-          "individual": true,
+          "individual": false,
           "price": 25,
           "sold": false,
           "availabilityNote": "Granite Inlay with wooden frame",
@@ -675,7 +847,7 @@
         {
           "id": "slqwav05zmnmn4cg6",
           "label": "bed",
-          "individual": true,
+          "individual": false,
           "price": 125,
           "sold": false,
           "availabilityNote": "Bedroom Set 2",
@@ -686,7 +858,7 @@
         {
           "id": "mgri8qedcmnmn5uxa",
           "label": "vanity dresser",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Bedroom Set 2",
@@ -698,7 +870,7 @@
         {
           "id": "ofpgjl8mdmnmn6run",
           "label": "dresser",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "Bedroom Set 2",
@@ -722,7 +894,7 @@
             "images/IMG_20260404_145039954.jpg"
           ],
           "label": "bed",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Bedroom Set 3"
@@ -733,21 +905,21 @@
             "images/IMG_20260405_153415508.jpg"
           ],
           "label": "vanity dresser",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Bedroom Set 3"
         },
         {
-          "id": "dyad3i1wgmnmo20rp",
+          "id": "v3fu0ug22mnph3vzt",
           "images": [
-            "images/IMG_20260404_145048224.jpg"
+            "/images/IMG_20260404_145048224.jpg"
           ],
-          "label": "bed side table",
-          "individual": true,
+          "label": "End Table",
+          "individual": false,
           "price": 25,
           "sold": false,
-          "availabilityNote": "Bedroom Set 3"
+          "availabilityNote": ""
         }
       ]
     },
@@ -764,7 +936,7 @@
             "images/IMG_20260404_145414110.jpg"
           ],
           "label": "Green Couch",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "these are like new"
@@ -775,41 +947,10 @@
             "images/IMG_20260404_145403784.jpg"
           ],
           "label": "green love seat",
-          "individual": true,
+          "individual": false,
           "price": 75,
           "sold": false,
           "availabilityNote": "these are like new"
-        }
-      ]
-    },
-    {
-      "id": "l5za5fd8bmnmoptzr",
-      "title": "Wicker Chairs",
-      "offerAsSet": true,
-      "setPrice": 100,
-      "collapsed": true,
-      "entries": [
-        {
-          "id": "231mom1sjmnmopvl1",
-          "images": [
-            "images/IMG_20260404_144951178.jpg"
-          ],
-          "label": "Antique Wicker chair",
-          "individual": true,
-          "price": 50,
-          "sold": false,
-          "availabilityNote": ""
-        },
-        {
-          "id": "5bw2xf84tmnmopzmf",
-          "images": [
-            "images/IMG_20260404_144928622.jpg"
-          ],
-          "label": "Antique Wicker chair",
-          "individual": true,
-          "price": 50,
-          "sold": false,
-          "availabilityNote": ""
         }
       ]
     },
@@ -826,7 +967,7 @@
             "images/IMG_20260406_142046885.jpg"
           ],
           "label": "Living Room Couch",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Living Room Couch"
@@ -837,7 +978,7 @@
             "images/IMG_20260406_142053294.jpg"
           ],
           "label": "Love seat Sofa",
-          "individual": true,
+          "individual": false,
           "price": 100,
           "sold": false,
           "availabilityNote": "Love seat Sofa"
@@ -859,7 +1000,7 @@
           "label": "Whirlpool Washer & Dryer",
           "individual": true,
           "price": 250,
-          "sold": false,
+          "sold": true,
           "availabilityNote": "Whirlpool Washer & Dryer"
         },
         {
@@ -870,7 +1011,7 @@
           "label": "washer",
           "individual": true,
           "price": 125,
-          "sold": false,
+          "sold": true,
           "availabilityNote": "washer"
         },
         {
@@ -881,13 +1022,13 @@
           "label": "Dryer",
           "individual": true,
           "price": 125,
-          "sold": false,
+          "sold": true,
           "availabilityNote": "Dryer"
         }
       ]
     }
   ],
   "ui": {
-    "standaloneCollapsed": false
+    "standaloneCollapsed": true
   }
 }
