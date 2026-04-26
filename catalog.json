@@ -219,7 +219,7 @@
         "images/IMG_20260401_184004208.jpg"
       ],
       "label": "Tribal Mask Wall Hanging-Hand Carved and Hand Painted-Large 22\"",
-      "price": 20,
+      "price": 15,
       "sold": false,
       "availabilityNote": "Tribal Mask Wall Hanging-Hand Carved and Hand Painted-Large 22\" Price Per piece. 4 pieces total"
     },
@@ -383,7 +383,7 @@
         "images/IMG_20260409_131809960.jpg"
       ],
       "label": "\"King Cake Plate \"River Scene\" Red\"",
-      "price": 10,
+      "price": 15.02,
       "sold": false,
       "availabilityNote": "\"King Cake Plate \"River Scene\" Red\""
     },
@@ -651,8 +651,8 @@
       "id": "02yy1edg0mog483sy",
       "images": [
         "images/IMG_20260416_182541361.jpg",
-        "images/4-26-26/IMG_20260416_182554070.jpg",
-        "images/4-26-26/IMG_20260416_182610554.jpg"
+        "images/IMG_20260416_182554070.jpg",
+        "images/IMG_20260416_182610554.jpg"
       ],
       "label": "Set of three Vintage Chinese Wall Panels - Mother of Pearl and black lacquer",
       "price": 20,
@@ -1019,6 +1019,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
