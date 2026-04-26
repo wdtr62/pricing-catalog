@@ -275,17 +275,6 @@
       "availabilityNote": "Scarlet Red Curtains"
     },
     {
-      "id": "z1ksr99hdmnnyisw0",
-      "images": [
-        "images/IMG_20260406_142112262.jpg",
-        "images/IMG_20260406_142129095.jpg"
-      ],
-      "label": "Whirlpool In Can Caddy 21.4-cu ft Side-by-Side Refrigerator ",
-      "price": 250,
-      "sold": false,
-      "availabilityNote": "Whirlpool In Can Caddy 21.4-cu ft Side-by-Side Refrigerator "
-    },
-    {
       "id": "slmsuqleamnnyiuo2",
       "images": [
         "images/IMG_20260406_141855846.jpg"
@@ -335,16 +324,6 @@
       "price": 20,
       "sold": false,
       "availabilityNote": "Angel Statue x 2"
-    },
-    {
-      "id": "wmlev8cphmno0gr4k",
-      "images": [
-        "images/IMG_20260405_151341146.jpg"
-      ],
-      "label": "Electric Stove",
-      "price": 75,
-      "sold": false,
-      "availabilityNote": "Electric Stove"
     },
     {
       "id": "ogrbb9e71mog2gy0b",
@@ -909,6 +888,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
