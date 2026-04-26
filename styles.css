@@ -109,6 +109,10 @@ code {
   line-height: 1.6;
 }
 
+.site-refresh-note--follow {
+  margin-top: 0.4rem;
+}
+
 .main {
   max-width: 1120px;
   margin: 0 auto;
@@ -1501,48 +1505,62 @@ body.is-locked .category__title-input {
   cursor: default;
 }
 
-@media (max-width: 640px) {
+/* Narrow viewports (phones portrait/landscape, small tablets): stack copy above buttons */
+@media (max-width: 900px) {
   .site-header__inner {
-    padding: 1.25rem 1rem 1.35rem;
-    gap: 1rem 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.15rem 1rem 1.25rem;
   }
 
   .site-header__text {
+    flex: 0 0 auto;
+    width: 100%;
     min-width: 0;
+    max-width: none;
+  }
+
+  .site-title {
+    font-size: clamp(1.65rem, 6.5vw, 2.35rem);
   }
 
   .site-tagline {
+    max-width: none;
     font-size: 1.0625rem;
     line-height: 1.55;
   }
 
-  .site-refresh-note {
+  .site-refresh-note,
+  .site-refresh-note--follow {
     max-width: none;
     font-size: 1.0625rem;
     line-height: 1.65;
   }
 
-  /* Header actions: larger tap targets, readable labels, sensible wrap */
+  /* One button per row — full width, no text squeezing beside buttons */
   .site-header__actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
     width: 100%;
+    align-self: stretch;
   }
 
   .site-header__actions .btn {
+    width: 100%;
     min-height: 2.75rem;
     font-size: 1rem;
-    padding: 0.7rem 0.85rem;
+    padding: 0.75rem 1rem;
     justify-content: center;
     text-align: center;
-    line-height: 1.25;
+    line-height: 1.3;
   }
+}
 
-  .site-header__actions #btnUnlock {
-    grid-column: 1 / -1;
-  }
-
+@media (max-width: 640px) {
   .main {
     padding: 1.35rem 1rem 3rem;
   }
