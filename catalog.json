@@ -783,14 +783,14 @@
           ]
         }
       ],
-      "collapsed": true
+      "collapsed": false
     },
     {
       "id": "tqt3oj39zmnmmrbu7",
       "title": "Living Room Tables",
       "offerAsSet": true,
       "setPrice": 100,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "mick2zxcymnmmrej4",
@@ -832,7 +832,7 @@
       "title": "Bedroom Set 2",
       "offerAsSet": true,
       "setPrice": 300,
-      "collapsed": true,
+      "collapsed": false,
       "entries": [
         {
           "id": "slqwav05zmnmn4cg6",
@@ -909,7 +909,7 @@
           "individual": false,
           "price": 25,
           "sold": false,
-          "availabilityNote": ""
+          "availabilityNote": "Bedroom Set 3"
         }
       ]
     },
