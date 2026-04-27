@@ -189,7 +189,7 @@
       ],
       "label": "Table Lamp",
       "price": 25,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Table Lamp"
     },
     {
@@ -1049,6 +1049,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
