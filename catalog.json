@@ -504,7 +504,7 @@
       ],
       "label": "Villa House 4-piece Canister Set",
       "price": 5,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Villa House 4-piece Canister Set"
     },
     {
@@ -514,7 +514,7 @@
       ],
       "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
       "price": 2,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen"
     },
     {
@@ -524,7 +524,7 @@
       ],
       "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
       "price": 2,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen"
     },
     {
@@ -1049,6 +1049,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": true
+    "standaloneCollapsed": false
   }
 }
