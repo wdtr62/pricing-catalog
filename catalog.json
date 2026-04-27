@@ -729,6 +729,36 @@
       "price": 10,
       "sold": false,
       "availabilityNote": "Pair of SPECTACULAR VINTAGE ART DECO BEVELED ETCHED PEACOCK MIRROR"
+    },
+    {
+      "id": "8ddsrecshmogfl1zc",
+      "images": [
+        "images/IMG_20260404_145329066.jpg"
+      ],
+      "label": "Sunday Afternoon Vintage Large Mural Tapestry Curtain Wall Hanging  Beautiful mint condition  52\" 33.5\"",
+      "price": 150,
+      "sold": false,
+      "availabilityNote": "Sunday Afternoon Vintage Large Mural \nTapestry Curtain Wall Hanging\nBeautiful mint condition\n52\" x 33.5\" will negotiate."
+    },
+    {
+      "id": "nh8opt41emogfl3uq",
+      "images": [
+        "images/IMG_20260404_145352353.jpg"
+      ],
+      "label": "Beige and Green Quaint Town Wall Art Hanging Tapestry 50\" x 70\"",
+      "price": 250,
+      "sold": false,
+      "availabilityNote": "Beige and Green Quaint Town Wall Art Hanging Tapestry.\n50\" x 70\" will negotiate."
+    },
+    {
+      "id": "r63160formogfl42j",
+      "images": [
+        "images/IMG_20260405_144532579.jpg"
+      ],
+      "label": "Woven Tapestry Wall Art Hanging",
+      "price": 50,
+      "sold": false,
+      "availabilityNote": "Woven Tapestry Wall Art Hanging 36\" x 42\" will negotiate."
     }
   ],
   "categories": [
@@ -1019,6 +1049,6 @@
     }
   ],
   "ui": {
-    "standaloneCollapsed": false
+    "standaloneCollapsed": true
   }
 }
