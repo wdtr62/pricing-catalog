@@ -31,7 +31,7 @@
             type="button"
             class="btn btn--ghost viewer-hover"
             id="btnLoadLatestFromSite"
-            title="Fetch the latest catalog.json from this website (use if refresh still shows old data)"
+            title="Fetch the latest catalog.json (on localhost this pulls from the live website)"
           >
             Load latest
           </button>
@@ -245,7 +245,7 @@
           <section class="instructions-sheet__section" aria-labelledby="ins-why-refresh">
             <h3 id="ins-why-refresh" class="instructions-sheet__heading">Why a normal refresh might not show “the latest”</h3>
             <p class="instructions-sheet__p">
-              This page keeps a copy in your browser. Refreshing only reloads the page—it does not always replace that copy with the newest <code>catalog.json</code> from the server. Use <strong>Load latest from website</strong> when you want this browser to match what is online (for example after someone else published).
+              Refreshing reloads the page. This site also checks for the newest <code>catalog.json</code> when it loads. If you ever suspect you’re seeing older listings, use <strong>Load latest</strong> to force a refresh.
             </p>
           </section>
 
@@ -281,7 +281,7 @@
             <ul class="instructions-sheet__list instructions-sheet__list--caution">
               <li>Browse by category or single items. Click a photo to see it larger with price and details.</li>
               <li>
-                We <strong>update this site as we add newly available items</strong> (photos, descriptions, prices, and sold status). <strong>Every time you visit</strong>, please click <strong>Load latest</strong> at the top so your browser pulls the newest catalog from the site—then refresh if the page asks. That is the reliable way to see what is actually for sale right now.
+                We <strong>update this site as we add newly available items</strong> (photos, descriptions, prices, and sold status). The site is designed to show the newest listings when it loads. If you ever suspect the page is out of date, tap <strong>Load latest</strong> at the top to refresh the catalog.
               </li>
               <li>This website is a <strong>catalog only</strong>. It does not process payments. When you are ready to buy, you will arrange payment and pickup with us directly, following the steps below.</li>
             </ul>

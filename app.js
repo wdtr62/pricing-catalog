@@ -14,6 +14,13 @@
    */
   const GITHUB_PUBLISH_TOKEN = "";
 
+  /**
+   * When testing locally (localhost), "Load latest" should pull from the live site.
+   * Set this to your GitHub Pages catalog.json URL.
+   * Example: "https://wdtr62.github.io/pricing-catalog/catalog.json"
+   */
+  const LIVE_SITE_CATALOG_URL = "https://wdtr62.github.io/pricing-catalog/catalog.json";
+
   const STORAGE_KEY = "gallery-catalog-v2";
   const LEGACY_STORAGE_KEY = "gallery-catalog-v1";
   const SESSION_UNLOCK = "gallery-pricing-unlocked";
@@ -339,11 +346,35 @@
   }
 
   /**
+   * Public/locked mode should reflect what's online right now.
+   * When locked, always try the server's catalog.json first; fall back to saved localStorage only if fetch fails.
+   * When unlocked (editing), prefer localStorage so in-progress edits aren't overwritten.
+   */
+  function loadStateForCurrentMode() {
+    if (isUnlocked()) return loadStateWithBootstrap();
+    return new Promise(function (resolve) {
+      loadCatalogJsonFromWebsite(function (err, latest) {
+        if (!err && latest) {
+          resolve(latest);
+          return;
+        }
+        // Offline / blocked / file:// / etc. Fall back to whatever we have locally.
+        loadStateWithBootstrap().then(resolve);
+      });
+    });
+  }
+
+  /**
    * Re-fetch catalog.json from the same origin (cache-busted). Use when another device published
    * or GitHub Pages cached an old file — normal refresh still uses localStorage until this runs.
    */
   function loadCatalogJsonFromWebsite(onDone) {
-    const url = "catalog.json?cb=" + Date.now();
+    const wantsLive =
+      typeof LIVE_SITE_CATALOG_URL === "string" &&
+      LIVE_SITE_CATALOG_URL.trim() &&
+      (location.hostname === "localhost" || location.hostname === "127.0.0.1");
+    const base = wantsLive ? LIVE_SITE_CATALOG_URL.trim() : "catalog.json";
+    const url = base + (base.indexOf("?") >= 0 ? "&" : "?") + "cb=" + Date.now();
     fetch(url, { cache: "no-store" })
       .then(function (r) {
         if (!r.ok) throw new Error(String(r.status));
@@ -360,25 +391,7 @@
       });
   }
 
-  function tryAutoSyncLockedCatalog(currentState) {
-    try {
-      if (isUnlocked()) return;
-      if (sessionStorage.getItem("catalogAutoSyncDone") === "1") return;
-      sessionStorage.setItem("catalogAutoSyncDone", "1");
-    } catch {
-      return;
-    }
-
-    loadCatalogJsonFromWebsite(function (err, latest) {
-      if (err || !latest) return;
-      try {
-        if (JSON.stringify(latest) === JSON.stringify(currentState)) return;
-      } catch {
-        // ignore compare errors; worst case user can press the button
-      }
-      window.location.reload();
-    });
-  }
+  // tryAutoSyncLockedCatalog removed — locked mode now loads server catalog on startup.
 
   function showCatalogCopyFeedback(message) {
     if (!catalogClipboardFeedback) return;
@@ -1782,7 +1795,7 @@
   function init() {
     wireBuyerGuideUi();
 
-    loadStateWithBootstrap().then(function (state) {
+    loadStateForCurrentMode().then(function (state) {
       catalogState = state;
 
       state.categories.forEach(function (c) {
@@ -1804,7 +1817,6 @@
     }
 
     applyLockUI();
-    tryAutoSyncLockedCatalog(state);
 
     document.addEventListener("dragend", function () {
       document.querySelectorAll(".entry__frame--drag").forEach(function (node) {
