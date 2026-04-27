@@ -17,7 +17,7 @@
         "images/IMG_20260404_144707872.jpg"
       ],
       "label": "Antique Love Seat",
-      "price": 200,
+      "price": 100,
       "sold": false,
       "availabilityNote": "1930's vintage wooden chair"
     },
@@ -229,7 +229,7 @@
         "images/IMG_20260401_184218754.jpg"
       ],
       "label": "beautiful dining room table",
-      "price": 400,
+      "price": 300,
       "sold": false,
       "availabilityNote": "beautiful dining room table"
     },
@@ -321,7 +321,7 @@
         "images/IMG_20260409_113817060.jpg"
       ],
       "label": "Book Collection",
-      "price": 4.98,
+      "price": 5,
       "sold": false,
       "availabilityNote": "ChildCraft set of books, great for children's learning."
     },
@@ -383,7 +383,7 @@
         "images/IMG_20260409_131809960.jpg"
       ],
       "label": "\"King Cake Plate \"River Scene\" Red\"",
-      "price": 15.02,
+      "price": 15,
       "sold": false,
       "availabilityNote": "\"King Cake Plate \"River Scene\" Red\""
     },
@@ -504,7 +504,7 @@
       ],
       "label": "Villa House 4-piece Canister Set",
       "price": 5,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "Villa House 4-piece Canister Set"
     },
     {
@@ -514,7 +514,7 @@
       ],
       "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
       "price": 2,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen"
     },
     {
@@ -524,7 +524,7 @@
       ],
       "label": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen",
       "price": 2,
-      "sold": false,
+      "sold": true,
       "availabilityNote": "VTG Burwood Products Fruit Wall Hanging Plaques Kitchen"
     },
     {
@@ -939,7 +939,7 @@
           "individual": false,
           "price": 25,
           "sold": false,
-          "availabilityNote": ""
+          "availabilityNote": "Bedroom Set 3"
         }
       ]
     },
